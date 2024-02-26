@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mViewModel"
+            type="com.emines_employee.screen.verifyme2.ApplyLeaveViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.verifyme2.ApplyLeaveActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nSVOTP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/rlToolbarApplyLeave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarVerifyMe2"
+                        layout="@layout/layout_custom_toolbar" />
+                </RelativeLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rlToolbarApplyLeave"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:paddingBottom="@dimen/_50sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTypeOfLeaveBtnAL"
+                        style="@style/defaultBtnStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:drawableEnd="@drawable/ic_down_arrow"
+                        android:gravity="start"
+                        android:paddingStart="@dimen/_30sdp"
+                        android:text="@string/types_of_leave"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llcLeaveBtnsAL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTypeOfLeaveBtnAL">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvFullDayBtnAL"
+                            style="@style/selectedBtnStyle"
+                            android:layout_width="0dp"
+                            android:background="@drawable/default_btn_drawable3"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/full_day" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvHalfDayBtnAL"
+                            style="@style/selectedBtnStyle"
+                            android:layout_width="0dp"
+                            android:background="@drawable/default_btn_drawable3"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/half_day" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMultiDayBtnAL"
+                        style="@style/selectedBtnStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/ic_add"
+                        android:gravity="start"
+                        android:background="@drawable/default_btn_drawable2"
+
+                        android:text="@string/multi_day"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/llcLeaveBtnsAL" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvMultiDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_50sdp"
+                        android:clipToPadding="true"
+                        android:paddingBottom="@dimen/_100sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvMultiDayBtnAL"
+                        />
+
+
+                    <!--                    <CalendarView-->
+                    <!--                        android:id="@+id/calenderViewAL"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginStart="@dimen/_15sdp"-->
+                    <!--                        android:layout_marginTop="@dimen/_20sdp"-->
+                    <!--                        android:layout_marginEnd="@dimen/_15sdp"-->
+                    <!--                        android:layout_marginBottom="@dimen/_50sdp"-->
+                    <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                        app:layout_constraintTop_toBottomOf="@id/tvMultiDayBtnAL" />-->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

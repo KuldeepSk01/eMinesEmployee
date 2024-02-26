@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:Context="com.emines_employee.screen.dashboard.profile.address.ProfileAddressListActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nSVTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarPAList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarAddressList"
+                        layout="@layout/layout_custom_toolbar2" />
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvPAList"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_below="@+id/rlToolBarPAList"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:cardCornerRadius="@dimen/_50sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPAList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/address_img" />
+                </androidx.cardview.widget.CardView>
+
+              <!--  <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddMoreSelectAddressBtnPAList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvPAList"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/add_more_text"
+                    android:textColor="@color/primary_color"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvAddressPAList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/cvPAList"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:clipToPadding="true"
+                    android:paddingBottom="@dimen/_100sdp"
+                    tools:listitem="@layout/item_address_layout" />
+
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

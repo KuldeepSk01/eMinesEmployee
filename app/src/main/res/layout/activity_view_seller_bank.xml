@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.dashboard.seller.addseller.bankinfo.AddSellerBankActivity">
+
+
+        <ScrollView
+            android:id="@+id/nSVTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_50sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarSellerBank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarSellerBank"
+                        layout="@layout/layout_custom_toolbar2" />
+                </RelativeLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlToolBarSellerBank"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvContactSellerBank"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_contact" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/contact"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvContactSellerBank"
+                        app:layout_constraintStart_toStartOf="@+id/cvContactSellerBank"
+                        app:layout_constraintTop_toBottomOf="@+id/cvContactSellerBank" />
+
+                    <View
+                        android:id="@+id/line1SellerBank"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/primary_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvContactSellerBank"
+                        app:layout_constraintStart_toEndOf="@+id/cvContactSellerBank"
+                        app:layout_constraintTop_toTopOf="@+id/cvContactSellerBank" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvAddressSellerBank"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line1SellerBank"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_white_info" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/company_info"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvAddressSellerBank"
+                        app:layout_constraintStart_toStartOf="@+id/cvAddressSellerBank"
+                        app:layout_constraintTop_toBottomOf="@+id/cvAddressSellerBank" />
+
+                    <View
+                        android:id="@+id/line2SellerBank"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/primary_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvAddressSellerBank"
+                        app:layout_constraintStart_toEndOf="@+id/cvAddressSellerBank"
+                        app:layout_constraintTop_toTopOf="@+id/cvAddressSellerBank" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvKYCSellerBank"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line2SellerBank"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_white_kyc" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/kyc"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvKYCSellerBank"
+                        app:layout_constraintStart_toStartOf="@+id/cvKYCSellerBank"
+                        app:layout_constraintTop_toBottomOf="@+id/cvKYCSellerBank" />
+
+                    <View
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/status_bar_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvKYCSellerBank"
+                        app:layout_constraintStart_toEndOf="@+id/cvKYCSellerBank"
+                        app:layout_constraintTop_toTopOf="@+id/cvKYCSellerBank" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAInfoSellerBank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clDInfo"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBNameSellerBank"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bank_name"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerBankName"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/account_name"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBNameSellerBank" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCountrySellerBank"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/account_number"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerBankName" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerBankAccount"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/account_number"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCountrySellerBank" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCitySellerBank"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/ifsc_code"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerBankAccount" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerBankIFSC"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/ifsc_code"
+                        android:inputType="textCapWords"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCitySellerBank" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerBankIFSC" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rlAddressBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

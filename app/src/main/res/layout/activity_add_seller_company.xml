@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.dashboard.seller.addseller.companyinfo.AddSellerCompanyActivity">
+
+        <ScrollView
+            android:id="@+id/nSVTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_50sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarSellerCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarSellerCompany"
+                        layout="@layout/layout_custom_toolbar2" />
+                </RelativeLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlToolBarSellerCompany"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvContactSellerCompany"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_contact" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/contact"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvContactSellerCompany"
+                        app:layout_constraintStart_toStartOf="@+id/cvContactSellerCompany"
+                        app:layout_constraintTop_toBottomOf="@+id/cvContactSellerCompany" />
+
+                    <View
+                        android:id="@+id/line1SellerCompany"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/primary_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvContactSellerCompany"
+                        app:layout_constraintStart_toEndOf="@+id/cvContactSellerCompany"
+                        app:layout_constraintTop_toTopOf="@+id/cvContactSellerCompany" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvAddressSellerCompany"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/status_bar_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line1SellerCompany"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_green_info" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/company_info"
+                        android:textColor="@color/hint_text_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvAddressSellerCompany"
+                        app:layout_constraintStart_toStartOf="@+id/cvAddressSellerCompany"
+                        app:layout_constraintTop_toBottomOf="@+id/cvAddressSellerCompany" />
+
+                    <View
+                        android:id="@+id/line2SellerCompany"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/status_bar_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvAddressSellerCompany"
+                        app:layout_constraintStart_toEndOf="@+id/cvAddressSellerCompany"
+                        app:layout_constraintTop_toTopOf="@+id/cvAddressSellerCompany" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvKYCSellerCompany"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/status_bar_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line2SellerCompany"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_kyc" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/kyc_text"
+                        android:textColor="@color/hint_text_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvKYCSellerCompany"
+                        app:layout_constraintStart_toStartOf="@+id/cvKYCSellerCompany"
+                        app:layout_constraintTop_toBottomOf="@+id/cvKYCSellerCompany" />
+
+                    <View
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/status_bar_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvKYCSellerCompany"
+                        app:layout_constraintStart_toEndOf="@+id/cvKYCSellerCompany"
+                        app:layout_constraintTop_toTopOf="@+id/cvKYCSellerCompany" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clDInfo"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_100sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoType"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/company_name"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerCompanyName"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/webkype_info_pvt"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoType" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoCountry"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/company_email"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerCompanyName" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerCompanyEmail"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/company_email"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoCountry" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoState"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/company_mobile_no"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerCompanyEmail" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerCompanyMobile"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/company_mobile_no"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoState" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoCity"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/website"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerCompanyMobile" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerCompanyWebsite"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/website"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoCity" />
+
+<!--
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCNoOfDirectors"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="start"
+                        android:text="@string/number_of_directors"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintEnd_toStartOf="@+id/tvCNoOfEmployee"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerCompanyWebsite" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerCompanyNoOfDirectors"
+                        style="@style/editTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:hint="4"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        app:layout_constraintEnd_toStartOf="@+id/etSellerCompanyNoOfEmployee"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCNoOfDirectors" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCNoOfEmployee"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="end"
+                        android:text="@string/number_of_employee"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tvCNoOfDirectors"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerCompanyWebsite" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerCompanyNoOfEmployee"
+                        style="@style/editTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:hint="1"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/etSellerCompanyNoOfDirectors"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCNoOfEmployee" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCStatus"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/company_status"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerCompanyNoOfDirectors" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCompanyStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCStatus" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCPurposeBuying"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/per_year_purpose_buying_from_emines"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rvCompanyStatus" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerCompanyPurposeBuyingMT"
+                        style="@style/editTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:hint="@string/mt"
+                        android:inputType="number"
+                        android:singleLine="true"
+
+                        app:layout_constraintEnd_toStartOf="@+id/etSellerCompanyPurposeBuyingValue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCPurposeBuying" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerCompanyPurposeBuyingValue"
+                        style="@style/editTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:hint="@string/value"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/etSellerCompanyPurposeBuyingMT"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCPurposeBuying" />
+
+-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rlAddressBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

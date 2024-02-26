@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemScheduleTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/_2023_10_04"
+            style="@style/defaultTextStyle"
+            android:layout_centerHorizontal="true" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/hint_text_color"
+            android:layout_below="@+id/tvItemScheduleTime"
+            />
+
+    </RelativeLayout>
+</layout>

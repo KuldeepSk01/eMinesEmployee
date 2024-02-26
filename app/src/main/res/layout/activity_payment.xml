@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.dashboard.home.createorders.payment.PaymentActivity">
+
+        <ScrollView
+            android:id="@+id/nSVTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_100sdp">
+
+                <View
+                    android:id="@+id/viewPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:background="@drawable/ic_toolbar_bg_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarPayment"
+                        layout="@layout/layout_custom_toolbar" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/rlToolBarPayment"
+                    android:background="@drawable/top_rounded_corner">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/rlPayment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvContactBCA"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:backgroundTint="@color/primary_color"
+                            app:cardCornerRadius="@dimen/_10sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_account" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/TextStyle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/contact"
+                            android:textColor="@color/primary_color"
+                            app:layout_constraintEnd_toEndOf="@+id/cvContactBCA"
+                            app:layout_constraintStart_toStartOf="@+id/cvContactBCA"
+                            app:layout_constraintTop_toBottomOf="@+id/cvContactBCA" />
+
+                        <View
+                            android:id="@+id/line1BCA"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_4sdp"
+                            android:background="@color/status_bar_color"
+                            app:layout_constraintBottom_toBottomOf="@+id/cvContactBCA"
+                            app:layout_constraintStart_toEndOf="@+id/cvContactBCA"
+                            app:layout_constraintTop_toTopOf="@+id/cvContactBCA" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvAddressBCA"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:backgroundTint="@color/status_bar_color"
+                            app:cardCornerRadius="@dimen/_10sdp"
+                            app:layout_constraintStart_toEndOf="@id/line1BCA"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_account" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/TextStyle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/address"
+                            android:textColor="@color/default_text_color"
+                            app:layout_constraintEnd_toEndOf="@+id/cvAddressBCA"
+
+                            app:layout_constraintStart_toStartOf="@+id/cvAddressBCA"
+                            app:layout_constraintTop_toBottomOf="@+id/cvAddressBCA" />
+
+                        <View
+                            android:id="@+id/line2BCA"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_4sdp"
+                            android:background="@color/status_bar_color"
+                            app:layout_constraintBottom_toBottomOf="@+id/cvAddressBCA"
+                            app:layout_constraintStart_toEndOf="@+id/cvAddressBCA"
+                            app:layout_constraintTop_toTopOf="@+id/cvAddressBCA" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvKYCBCA"
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:backgroundTint="@color/status_bar_color"
+                            app:cardCornerRadius="@dimen/_10sdp"
+                            app:layout_constraintStart_toEndOf="@id/line2BCA"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_account" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/TextStyle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/address"
+                            android:textColor="@color/default_text_color"
+                            app:layout_constraintEnd_toEndOf="@+id/cvKYCBCA"
+                            app:layout_constraintStart_toStartOf="@+id/cvKYCBCA"
+                            app:layout_constraintTop_toBottomOf="@+id/cvKYCBCA" />
+
+                        <View
+                            android:layout_width="@dimen/_50sdp"
+                            android:layout_height="@dimen/_4sdp"
+                            android:background="@color/status_bar_color"
+                            app:layout_constraintBottom_toBottomOf="@+id/cvKYCBCA"
+                            app:layout_constraintStart_toEndOf="@+id/cvKYCBCA"
+                            app:layout_constraintTop_toTopOf="@+id/cvKYCBCA" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/vSeparateLinePayment"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_below="@id/rlPayment"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/box_color_2" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBankTransferPayment"
+                        style="@style/TextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/vSeparateLinePayment"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:text="@string/bank_transfer_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clBankDetailPayment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvBankTransferPayment"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:background="@drawable/otp_bg_drawable"
+                        android:padding="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivSelectImgPayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_10sdp"
+                            android:src="@drawable/tick"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvApprovedBankAccountPayment"
+                            style="@style/TextStyle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/approved_bank_account_text"
+                            app:layout_constraintStart_toEndOf="@+id/ivSelectImgPayment"
+                            app:layout_constraintTop_toTopOf="@+id/ivSelectImgPayment" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvWEBKYPEPayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_semi_bold"
+                            android:text="@string/webkype_info_services_pvt_ltd_text"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toEndOf="@+id/ivSelectImgPayment"
+                            app:layout_constraintTop_toBottomOf="@+id/tvApprovedBankAccountPayment" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvACPayment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_semi_bold"
+                            android:text="@string/account_number_text"
+                            android:textColor="@color/order_pending_color"
+                            app:layout_constraintStart_toEndOf="@+id/ivSelectImgPayment"
+                            app:layout_constraintTop_toBottomOf="@+id/tvWEBKYPEPayment" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvAccountNumberPayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:text="@string/_30212975009_text"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toEndOf="@+id/tvACPayment"
+                            app:layout_constraintTop_toTopOf="@+id/tvACPayment" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvIFSCPayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_semi_bold"
+                            android:text="@string/ifsc"
+                            android:textColor="@color/order_pending_color"
+                            app:layout_constraintStart_toEndOf="@+id/ivSelectImgPayment"
+                            app:layout_constraintTop_toBottomOf="@+id/tvACPayment" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvIFSCCodePayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:text="@string/icic99081_text"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toEndOf="@+id/tvIFSCPayment"
+                            app:layout_constraintTop_toTopOf="@+id/tvIFSCPayment" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvBranchPayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_semi_bold"
+                            android:text="@string/branch"
+                            android:textColor="@color/order_pending_color"
+                            app:layout_constraintStart_toEndOf="@+id/ivSelectImgPayment"
+                            app:layout_constraintTop_toBottomOf="@+id/tvIFSCPayment" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvBranchNamePayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:text="@string/noida_sector_12_text"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toEndOf="@+id/tvBranchPayment"
+                            app:layout_constraintTop_toTopOf="@+id/tvBranchPayment" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvBankNPayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_semi_bold"
+                            android:text="@string/bank_name"
+                            android:textColor="@color/order_pending_color"
+                            app:layout_constraintStart_toEndOf="@+id/ivSelectImgPayment"
+                            app:layout_constraintTop_toBottomOf="@+id/tvBranchPayment" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvBankNamePayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:text="@string/icici_bank_text"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toEndOf="@+id/tvBankNPayment"
+                            app:layout_constraintTop_toTopOf="@+id/tvBankNPayment" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPostDeliveryPayment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/clBankDetailPayment"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/post_delivery_your_payment_will_be_credited_in_this_account_only_text"
+
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp" />
+
+                    <View
+                        android:id="@+id/vSeparateLine2Payment"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:layout_constraintTop_toBottomOf="@id/tvPostDeliveryPayment" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

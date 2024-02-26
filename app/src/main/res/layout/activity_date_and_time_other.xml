@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.dashboard.home.createorders.date.DateAndTimeOtherActivity">
+
+        <ScrollView
+            android:id="@+id/nSVTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_100sdp">
+
+                <View
+                    android:id="@+id/viewDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:background="@drawable/ic_toolbar_bg_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarDateTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarDateTime"
+                        layout="@layout/layout_custom_toolbar" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rlToolBarDateTime"
+                    android:background="@drawable/top_rounded_corner">
+
+                    <ScrollView
+                        android:id="@+id/nSVOnBoarding"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fillViewport="true"
+                        android:scrollIndicators="none"
+                        android:scrollbars="none"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clDPO"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_10sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/rlToolBarPickDateOther">
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cvSelectDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                app:cardElevation="@dimen/_2sdp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/rlToolBarPickDateOther"
+
+                                >
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <CalendarView
+                                        android:id="@+id/calenderViewSDO"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content" />
+
+
+                                </RelativeLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvSlot"
+                                style="@style/TextStyle2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/_15sdp"
+                                android:text="@string/slots_text"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cvSelectDate" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llCSelectSlot1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/tvSlot">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llcMorningDay"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/otp_bg_drawable"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivMorningSDO"
+                                        android:layout_width="@dimen/_20sdp"
+                                        android:layout_height="@dimen/_20sdp"
+                                        android:src="@drawable/truck_img"
+
+                                        />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvMorningSDO"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:gravity="center"
+                                        android:text="@string/morning_text"
+
+                                        android:textColor="@color/hint_text_color" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llcDaySDO"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_30sdp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/otp_bg_drawable"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivDaySDO"
+                                        android:layout_width="@dimen/_20sdp"
+                                        android:layout_height="@dimen/_20sdp"
+                                        android:src="@drawable/truck_img"
+
+                                        />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvDaySDO"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:gravity="center"
+                                        android:text="@string/day_txet"
+
+                                        android:textColor="@color/hint_text_color" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llcEveningNight"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/llCSelectSlot1">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llcEveningSDO"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/otp_bg_drawable"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivEveningSDO"
+                                        android:layout_width="@dimen/_20sdp"
+                                        android:layout_height="@dimen/_20sdp"
+                                        android:src="@drawable/truck_img"
+
+                                        />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvEveningSDO"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:gravity="center"
+                                        android:text="@string/evening_text"
+                                        android:textColor="@color/hint_text_color" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llcNightSDO"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_30sdp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/otp_bg_drawable"
+                                    android:orientation="horizontal"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivNightSDO"
+                                        android:layout_width="@dimen/_20sdp"
+                                        android:layout_height="@dimen/_20sdp"
+                                        android:src="@drawable/truck_img"
+
+                                        />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvNightSDO"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:gravity="center"
+                                        android:text="@string/night_text"
+                                        android:textColor="@color/hint_text_color" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llcAnytimeSDO"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_15sdp"
+                                android:background="@drawable/otp_bg_drawable"
+                                android:orientation="horizontal"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/llcEveningNight">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvAnytimeSDO"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="@dimen/_10sdp"
+                                    android:text="@string/anytime_text"
+                                    android:textColor="@color/hint_text_color" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llcCheckBoxSDO"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/_10sdp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/llcAnytimeSDO">
+
+                                <androidx.appcompat.widget.AppCompatCheckBox
+                                    android:id="@+id/ivCheckboxSDO"
+                                    android:layout_width="@dimen/_20sdp"
+                                    android:layout_height="@dimen/_20sdp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvCheckboxSDO"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:gravity="center"
+                                    android:text="@string/we_can_ship_directly_to_your_warehouse_text"
+                                    android:textColor="@color/hint_text_color" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_100sdp"
+                                app:layout_constraintTop_toBottomOf="@+id/llcCheckBoxSDO" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </ScrollView>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:scrollIndicators="none"
+    android:fillViewport="true"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.dashboard.home.target.TargetsActivity">
+        <View
+            android:id="@+id/viewAttendance"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:background="@drawable/ic_toolbar_bg_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTargets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvTargetsImg"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_50sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivTargetsImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/verify_img" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTargetsUserName"
+                style="@style/TextStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/gajendra_singh"
+                app:layout_constraintStart_toEndOf="@+id/cvTargetsImg"
+                app:layout_constraintTop_toTopOf="@+id/cvTargetsImg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTargetUserMobile"
+                style="@style/TextStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/agm_noida"
+                android:fontFamily="@font/inter_regular"
+                app:layout_constraintStart_toStartOf="@+id/tvTargetsUserName"
+                app:layout_constraintTop_toBottomOf="@+id/tvTargetsUserName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTargetUserEmail"
+                style="@style/TextStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/online"
+                android:fontFamily="@font/inter_regular"
+                app:layout_constraintStart_toStartOf="@+id/tvTargetsUserName"
+                app:layout_constraintTop_toBottomOf="@+id/tvTargetUserMobile" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTargets2AttendanceBtn"
+                style="@style/TextStyle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/target"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/cvTargetsImg"
+                app:layout_constraintTop_toBottomOf="@+id/cvTargetsImg" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_minus50sdp"
+            app:cardCornerRadius="@dimen/_30sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_below="@id/clTargets">
+
+            <ScrollView
+                android:id="@+id/scrollViewHom2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollIndicators="none"
+                android:scrollbars="none">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvATargets"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:clipToPadding="true"
+                        android:paddingBottom="@dimen/_50sdp"
+                        tools:listitem="@layout/item_targets_layout" />
+
+                </RelativeLayout>
+            </ScrollView>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
+</layout>

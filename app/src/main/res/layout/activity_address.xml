@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_minus10sdp"
+        tools:context=".screen.dashboard.home.addbuyer.contactperson.SellerContactPersonActivity">
+
+        <ScrollView
+            android:id="@+id/nSVTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_50sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarBCA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarBBA"
+                        layout="@layout/layout_custom_toolbar2" />
+                </RelativeLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlToolBarBCA"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvContactBCA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_contact" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/contact"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvContactBCA"
+                        app:layout_constraintStart_toStartOf="@+id/cvContactBCA"
+                        app:layout_constraintTop_toBottomOf="@+id/cvContactBCA" />
+
+                    <View
+                        android:id="@+id/line1BCA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/primary_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvContactBCA"
+                        app:layout_constraintStart_toEndOf="@+id/cvContactBCA"
+                        app:layout_constraintTop_toTopOf="@+id/cvContactBCA" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvAddressBCA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/status_bar_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line1BCA"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_address" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/address"
+                        android:textColor="@color/hint_text_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvAddressBCA"
+                        app:layout_constraintStart_toStartOf="@+id/cvAddressBCA"
+                        app:layout_constraintTop_toBottomOf="@+id/cvAddressBCA" />
+
+                    <View
+                        android:id="@+id/line2BCA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/status_bar_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvAddressBCA"
+                        app:layout_constraintStart_toEndOf="@+id/cvAddressBCA"
+                        app:layout_constraintTop_toTopOf="@+id/cvAddressBCA" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvKYCBCA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/status_bar_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line2BCA"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_kyc" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/kyc_text"
+                        android:textColor="@color/hint_text_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvKYCBCA"
+                        app:layout_constraintStart_toStartOf="@+id/cvKYCBCA"
+                        app:layout_constraintTop_toBottomOf="@+id/cvKYCBCA" />
+
+                    <View
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/status_bar_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvKYCBCA"
+                        app:layout_constraintStart_toEndOf="@+id/cvKYCBCA"
+                        app:layout_constraintTop_toTopOf="@+id/cvKYCBCA" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rlAddress"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoType"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/type_text"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etAInfoType"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="WebKype Info PVT."
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoType" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoCountry"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/country_text"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etAInfoType" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etAInfoTypeCountry"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/galaxy_blue_sapphire_sector_4_text"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoCountry" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoState"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/state_text"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etAInfoTypeCountry" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etAInfoTypeState"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/uttar_pradesh_text"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoState" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoCity"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/city_text"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etAInfoTypeState" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etAInfoTypeCity"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/galaxy_blue_sapphire_sector_4_text"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoCity" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoArea"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/area_text"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etAInfoTypeCity" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etAInfoTypeArea"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/galaxy_blue_sapphire_sector_4_text"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoArea" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoPinCode"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/pin_code"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etAInfoTypeArea" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etAInfoTypePinCode"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/galaxy_blue_sapphire_sector_4_text"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoPinCode" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/etAInfoTypeArea" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

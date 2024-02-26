@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.dashboard.profile.kyc.ProfileKYCActivity"
+
+        >
+
+        <ScrollView
+            android:id="@+id/nSVTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarPKYC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarPKYC"
+                        layout="@layout/layout_custom_toolbar2" />
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvPKYC"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_below="@+id/rlToolBarPKYC"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:cardCornerRadius="@dimen/_50sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPKYC"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/kyc_img" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clPKYC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvPKYC"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPanNumberPKYC"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pan_number"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etPanNumberPKYC"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/pan_number"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPanNumberPKYC" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUploadPanPKYC"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/upload_pan"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etPanNumberPKYC" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivUploadPanPKYC"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/upload_pan"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintTop_toBottomOf="@+id/tvUploadPanPKYC" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAadhaarNumberKYC"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/aadhaar_number"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivUploadPanPKYC" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etAadhaarNumberKYC"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/aadhaar_number"
+                        android:inputType="number"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAadhaarNumberKYC" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUploadGSTKYC"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/upload_aadhar"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etAadhaarNumberKYC" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivUploadAadhaarKYC"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintTop_toBottomOf="@+id/tvUploadGSTKYC" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCancelChequeTXTKYC"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/cancel_cheque"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivUploadAadhaarKYC" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etCancelChequeKYC"
+                        style="@style/editTextStyle"
+                        android:hint="@string/cancel_cheque"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCancelChequeTXTKYC" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCancelChequeKYC"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/upload_cancel_cheque"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etCancelChequeKYC" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivCancelChequeKYC"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCancelChequeKYC" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/ivCancelChequeKYC" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rlAddressBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

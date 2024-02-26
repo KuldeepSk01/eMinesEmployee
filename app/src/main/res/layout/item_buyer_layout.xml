@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvItemBuyer"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivItemBuyer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/greenscap" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemBuyerDateOfA"
+                style="@style/defaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/inter_regular"
+                android:text="Add : 17 Jan 2024"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_6ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvItemBuyer" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clItemBuyer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cl2ItemBuyer"
+                app:layout_constraintStart_toEndOf="@+id/cvItemBuyer"
+                app:layout_constraintTop_toTopOf="@id/cvItemBuyer"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitleItemBuyer"
+                    style="@style/TextStyle1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/rcr_waster_pvt_ltd_rajeev_shukla"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llItemBuyerName"
+                    style="@style/TextStyle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/inter_regular"
+                    android:gravity="center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleItemBuyer">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvItemBuyerName"
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="Gajjen Singh"
+                        android:textColor="@color/black" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/tvCallBtnItemBuyer"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/tvViewBtnItemBuyer"
+                        android:fontFamily="@font/inter_bold"
+                        android:src="@drawable/ic_green_call"
+                        android:text="@string/active"
+                        android:textColor="@color/status_bar_color_1" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddressItemBuyer"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@string/sector_18_noida_8367897892"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llItemBuyerName" />
+
+
+                <RelativeLayout
+                    android:id="@+id/rlItemBuyerType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvAddressItemBuyer"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAddressItemBuyer">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTypeBuyerSellerItemBuyer"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/buyer"
+                        android:textColor="@color/blue_color_2"
+
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvItemBuyerStatus"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/tvTypeBuyerSellerItemBuyer"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/active"
+                        android:textColor="@color/status_bar_color_1" />
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl2ItemBuyer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/clItemBuyer"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvItemBuyerBuyingReq"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/buying_req"
+                    android:padding="@dimen/_2sdp"
+                    android:textSize="@dimen/_8ssp"
+                    android:textColor="@color/white"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:background="@drawable/buyer_outline_drawable1"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvItemBuyerPO"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@string/po"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:textSize="@dimen/_8ssp"
+                    android:textColor="@color/white"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:background="@drawable/buyer_outline_drawable1"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemBuyerBuyingReq" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvItemBuyerTotalNoOrder"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/inter_regular"
+                    android:padding="@dimen/_2sdp"
+                    android:text="@string/total_order"
+                    android:textSize="@dimen/_8ssp"
+                    android:textColor="@color/white"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+
+                    android:background="@drawable/buyer_outline_drawable1"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemBuyerPO"
+
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/llcBtnsItemBuyer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/gray_btn_drawable"
+                android:padding="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clItemBuyer">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tvUpdateBtnItemBuyer"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_edit_green"
+                    android:text="@string/update"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8ssp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tvViewBtnItemBuyer"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/tvUpdateBtnItemBuyer"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_view"
+                    android:text="@string/create_pickup"
+                    android:textColor="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tvGoogleMapBtnItemBuyer"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/tvViewBtnItemBuyer"
+                    android:fontFamily="@font/inter_bold"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_google_map"
+                    android:text="@string/active"
+                    android:textColor="@color/status_bar_color_1" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCreatePickupBtnItemBuyer"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:background="@drawable/buyer_outline_drawable"
+                    android:drawableEnd="@drawable/ic_add"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_add"
+                    android:text="@string/create_request"
+
+                    />
+
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

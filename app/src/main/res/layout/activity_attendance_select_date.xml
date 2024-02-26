@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mViewmodel"
+            type="com.emines_employee.screen.dashboard.home.attendance.AttendanceViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollViewHom2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollIndicators="none"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".screen.dashboard.home.attendance.AttendanceSelectDateActivity">
+
+            <View
+                android:id="@+id/viewAttendance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@drawable/ic_toolbar_bg_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/rlToolbarAttendance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBackAttendance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:src="@drawable/ic_back_attendance" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ivTitleAttendance"
+                    style="@style/TextStyle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_toRightOf="@+id/ivBackAttendance"
+                    android:fontFamily="@font/inter_regular"
+                    android:src="@drawable/ic_back_attendance"
+                    android:text="@string/attendance_text"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_minus50sdp"
+                app:cardCornerRadius="@dimen/_30sdp">
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                   <androidx.appcompat.widget.LinearLayoutCompat
+                       android:id="@+id/llcAttendanceFilterLayout"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="@dimen/_15sdp"
+                       android:layout_marginTop="@dimen/_15sdp"
+                       android:layout_marginEnd="@dimen/_15sdp"
+                       android:background="@drawable/attendance_unselect_filter_drawable"
+                       android:orientation="horizontal">
+
+                       <androidx.appcompat.widget.AppCompatTextView
+                           android:id="@+id/tvAttendanceTodayBtn"
+                           style="@style/defaultTextStyle"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:background="@drawable/attendance_select_filter_drawable"
+                           android:fontFamily="@font/inter_bold"
+                           android:gravity="center"
+                           android:padding="@dimen/_5sdp"
+                           android:text="@string/today"
+                           android:textColor="@color/white"
+                           android:textSize="@dimen/_10ssp" />
+
+                       <androidx.appcompat.widget.AppCompatTextView
+                           android:id="@+id/tvAttendanceMonthlyBtn"
+                           style="@style/defaultTextStyle"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:fontFamily="@font/inter_bold"
+                           android:gravity="center"
+                           android:padding="@dimen/_5sdp"
+                           android:text="@string/monthly"
+                           android:textSize="@dimen/_10ssp"
+                           />
+
+                       <androidx.appcompat.widget.AppCompatTextView
+                           android:id="@+id/tvAttendanceYearBtn"
+                           style="@style/defaultTextStyle"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:fontFamily="@font/inter_bold"
+                           android:gravity="center"
+                           android:padding="@dimen/_5sdp"
+                           android:text="@string/year"
+                           android:textSize="@dimen/_10ssp" />
+                   </androidx.appcompat.widget.LinearLayoutCompat>
+
+                   <!--This is for calender-->
+                   <RelativeLayout
+                       android:visibility="gone"
+                       android:id="@+id/rlAttendance"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_marginTop="@dimen/_20sdp"
+                       android:layout_below="@+id/llcAttendanceFilterLayout"
+                       >
+
+                                              <CalendarView
+                           android:id="@+id/calenderViewAttendance"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           />
+
+                       <!--  <androidx.recyclerview.widget.RecyclerView
+                             android:id="@+id/rvAttendanceFilter"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_below="@+id/llcAttendanceFilterLayout"
+                             android:layout_marginStart="@dimen/_10sdp"
+                             android:layout_marginTop="@dimen/_10sdp"
+                             android:layout_marginEnd="@dimen/_10sdp"
+                             android:paddingBottom="@dimen/_50sdp"
+                             android:clipToPadding="true" />-->
+
+                       <RelativeLayout
+                           android:id="@+id/rlAbsentAttendance"
+                           android:layout_width="match_parent"
+                           android:layout_height="@dimen/_40sdp"
+                           android:layout_below="@+id/calenderViewAttendance"
+                           android:layout_marginStart="@dimen/_15sdp"
+                           android:layout_marginTop="@dimen/_20sdp"
+                           android:layout_marginEnd="@dimen/_15sdp">
+
+                           <androidx.appcompat.widget.AppCompatTextView
+                               style="@style/TextStyle1"
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_centerVertical="true"
+                               android:layout_marginStart="@dimen/_1sdp"
+                               android:background="@drawable/absent_outline_drawable"
+                               android:drawableStart="@drawable/ic_absent_start_drawable"
+                               android:drawablePadding="@dimen/_10sdp"
+                               android:fontFamily="@font/inter_medium"
+                               android:gravity="center_vertical"
+                               android:paddingEnd="@dimen/_15sdp"
+                               android:text="@string/absent"
+                               android:textColor="@color/black" />
+
+                           <androidx.appcompat.widget.AppCompatTextView
+                               android:id="@+id/tvAbsentAttendanceCount"
+                               style="@style/TextStyle1"
+                               android:layout_width="@dimen/_30sdp"
+                               android:layout_height="@dimen/_30sdp"
+                               android:layout_alignParentEnd="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginEnd="@dimen/_10sdp"
+                               android:background="@drawable/ic_absent_count_drawable"
+                               android:drawablePadding="@dimen/_10sdp"
+                               android:fontFamily="@font/inter_medium"
+                               android:gravity="center"
+                               android:padding="@dimen/_5sdp"
+                               android:textColor="@color/black" />
+                       </RelativeLayout>
+
+                       <RelativeLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="@dimen/_40sdp"
+                           android:layout_below="@+id/rlAbsentAttendance"
+                           android:layout_marginStart="@dimen/_15sdp"
+                           android:layout_marginTop="@dimen/_15sdp"
+                           android:layout_marginEnd="@dimen/_15sdp"
+                           android:layout_marginBottom="@dimen/_100sdp">
+
+                           <androidx.appcompat.widget.AppCompatTextView
+                               style="@style/TextStyle1"
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_centerVertical="true"
+                               android:layout_marginStart="@dimen/_1sdp"
+                               android:background="@drawable/present_outline_drawable"
+                               android:drawableStart="@drawable/ic_present_start_drawable"
+                               android:drawablePadding="@dimen/_10sdp"
+                               android:fontFamily="@font/inter_medium"
+                               android:gravity="center_vertical"
+                               android:paddingEnd="@dimen/_15sdp"
+                               android:text="@string/present"
+                               android:textColor="@color/black" />
+
+                           <androidx.appcompat.widget.AppCompatTextView
+                               android:id="@+id/tvPresentAttendanceCount"
+                               style="@style/TextStyle1"
+                               android:layout_width="@dimen/_30sdp"
+                               android:layout_height="@dimen/_30sdp"
+                               android:layout_alignParentEnd="true"
+                               android:layout_centerVertical="true"
+                               android:layout_marginEnd="@dimen/_10sdp"
+                               android:background="@drawable/ic_present_count_drawable"
+                               android:drawablePadding="@dimen/_10sdp"
+                               android:fontFamily="@font/inter_medium"
+                               android:gravity="center"
+                               android:padding="@dimen/_5sdp"
+                               android:textColor="@color/black" />
+                       </RelativeLayout>
+                   </RelativeLayout>
+
+                   <!--this for monthly and yearly filter -->
+                   <androidx.recyclerview.widget.RecyclerView
+                       android:id="@+id/rvAttendance"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="@dimen/_10sdp"
+                       android:layout_marginTop="@dimen/_10sdp"
+                       android:layout_marginEnd="@dimen/_10sdp"
+                       android:clipToPadding="true"
+                       android:layout_below="@+id/llcAttendanceFilterLayout"
+                       android:paddingBottom="@dimen/_50sdp"
+                       tools:listitem="@layout/sub_item_employee_attendance" />
+               </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

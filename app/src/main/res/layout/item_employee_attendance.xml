@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            >
+
+            <GridLayout
+                android:id="@+id/glAttendance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:rowCount="1"
+                android:columnCount="2"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPresentStatusItemEA"
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/absent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textColor="@color/red_alert_color"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <RelativeLayout
+                        android:id="@+id/clCheckInItemEA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPresentStatusItemEA">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCheckInItemEA"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="62dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentStart="true"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="@string/check_in"
+                            android:textColor="@color/black" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCheckInTimeItemEA"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="@string/_10_am"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/tvCheckInItemEA"
+                            android:textColor="@color/black" />
+                    </RelativeLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCheckInDateTextItemEA"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/inter_medium"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCheckInDateItemEA"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_toEndOf="@+id/tvCheckInDateTextItemEA"
+                        android:text="@string/_23_march_2023"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+                    <RelativeLayout
+                        android:id="@+id/cl3LocationItemEA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_row="1"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCheckInDateTextItemEA"
+                        >
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLocationTextItemEA"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/location"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            />
+
+                        <!--<androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLocationTextItemEA"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/location"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black"
+
+                            />
+-->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCheckInLocationAddressItemEA"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sector_18_noida"
+                            android:layout_below="@+id/tvLocationTextItemEA"
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </GridLayout>
+
+
+            <!--  <androidx.appcompat.widget.LinearLayoutCompat
+                  android:id="@+id/llcCheckOutItemEA"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/_5sdp"
+                  app:layout_constraintEnd_toEndOf="@id/tvPresentStatusItemEA"
+                  app:layout_constraintTop_toBottomOf="@+id/tvPresentStatusItemEA">
+
+                  <androidx.appcompat.widget.AppCompatTextView
+                      android:id="@+id/tvCheckOutItemEA"
+                      style="@style/TextStyle1"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:fontFamily="@font/inter_bold"
+                      android:text="@string/check_out"
+                      android:textColor="@color/seller_color"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="parent" />
+
+                  <androidx.appcompat.widget.AppCompatTextView
+                      android:id="@+id/tvCheckOutTimeItemEA"
+                      style="@style/defaultTextStyle"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginStart="@dimen/_5sdp"
+                      android:gravity="center_vertical"
+                      android:text="@string/_10_am"
+                      android:textColor="@color/black"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintTop_toTopOf="parent" />
+              </androidx.appcompat.widget.LinearLayoutCompat>
+
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/tvCheckOutDateItemEA"
+                  style="@style/defaultTextStyle"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/_23_march_2023"
+                  app:layout_constraintStart_toStartOf="@+id/llcCheckOutItemEA"
+                  app:layout_constraintTop_toBottomOf="@+id/llcCheckOutItemEA" />
+
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/tvCheckOutAddressItemEA"
+                  style="@style/defaultTextStyle"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/sector_18_noida"
+                  app:layout_constraintStart_toStartOf="@+id/llcCheckOutItemEA"
+                  app:layout_constraintTop_toBottomOf="@+id/tvCheckOutDateItemEA" />
+  -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

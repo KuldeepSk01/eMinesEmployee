@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".screen.dashboard.home.addbuyer.address.SellerAddressListActivity"
+
+        >
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nSVOnBoarding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarBSA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_minus10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarBSA"
+                        layout="@layout/layout_custom_toolbar2" />
+                </RelativeLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/rlSelectAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlToolBarBSA">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvContactBCA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:backgroundTint="@color/primary_color"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_contact" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/contact"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvContactBCA"
+                        app:layout_constraintStart_toStartOf="@+id/cvContactBCA"
+                        app:layout_constraintTop_toBottomOf="@+id/cvContactBCA" />
+
+                    <View
+                        android:id="@+id/line1BCA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/primary_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvContactBCA"
+                        app:layout_constraintStart_toEndOf="@+id/cvContactBCA"
+                        app:layout_constraintTop_toTopOf="@+id/cvContactBCA" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvAddressBCA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line1BCA"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_white_address" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/address"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvAddressBCA"
+                        app:layout_constraintStart_toStartOf="@+id/cvAddressBCA"
+                        app:layout_constraintTop_toBottomOf="@+id/cvAddressBCA" />
+
+                    <View
+                        android:id="@+id/line2BCA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/status_bar_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvAddressBCA"
+                        app:layout_constraintStart_toEndOf="@+id/cvAddressBCA"
+                        app:layout_constraintTop_toTopOf="@+id/cvAddressBCA" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvKYCBCA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/status_bar_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line2BCA"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_kyc" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/kyc_text"
+                        android:textColor="@color/hint_text_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvKYCBCA"
+                        app:layout_constraintStart_toStartOf="@+id/cvKYCBCA"
+                        app:layout_constraintTop_toBottomOf="@+id/cvKYCBCA" />
+
+                    <View
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/status_bar_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvKYCBCA"
+                        app:layout_constraintStart_toEndOf="@+id/cvKYCBCA"
+                        app:layout_constraintTop_toTopOf="@+id/cvKYCBCA" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddMoreSelectAddressBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/add_more_text"
+                    android:textColor="@color/primary_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rlSelectAddress" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNoAddressFound"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/no_address_found"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAddMoreSelectAddressBtn" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSelectAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:clipToPadding="true"
+                    android:paddingBottom="@dimen/_100sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvAddMoreSelectAddressBtn"
+                    tools:listitem="@layout/item_address_layout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

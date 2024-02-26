@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_minus10sdp"
+        tools:context=".screen.dashboard.home.addbuyer.account.SellerBankAccountActivity">
+
+        <ScrollView
+            android:id="@+id/nSVTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_50sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarBuyer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarBuyer"
+                        layout="@layout/layout_custom_toolbar2" />
+                </RelativeLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlToolBarBuyer"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvContactBBA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_contact" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/contact"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvContactBBA"
+                        app:layout_constraintStart_toStartOf="@+id/cvContactBBA"
+                        app:layout_constraintTop_toBottomOf="@+id/cvContactBBA" />
+
+                    <View
+                        android:id="@+id/line1BBA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/primary_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvContactBBA"
+                        app:layout_constraintStart_toEndOf="@+id/cvContactBBA"
+                        app:layout_constraintTop_toTopOf="@+id/cvContactBBA" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvAddressBBA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line1BBA"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_white_address" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/address"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvAddressBBA"
+                        app:layout_constraintStart_toStartOf="@+id/cvAddressBBA"
+                        app:layout_constraintTop_toBottomOf="@+id/cvAddressBBA" />
+
+                    <View
+                        android:id="@+id/line2BBA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/primary_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvAddressBBA"
+                        app:layout_constraintStart_toEndOf="@+id/cvAddressBBA"
+                        app:layout_constraintTop_toTopOf="@+id/cvAddressBBA" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvKYCBBA"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line2BBA"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_white_kyc" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/kyc"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvKYCBBA"
+                        app:layout_constraintStart_toStartOf="@+id/cvKYCBBA"
+                        app:layout_constraintTop_toBottomOf="@+id/cvKYCBBA" />
+
+                    <View
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/status_bar_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvKYCBBA"
+                        app:layout_constraintStart_toEndOf="@+id/cvKYCBBA"
+                        app:layout_constraintTop_toTopOf="@+id/cvKYCBBA" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAInfoBuyer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clDInfo"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBNameBuyer"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bank_name"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etBankName"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:hint="@string/account_name"
+                        app:layout_constraintTop_toBottomOf="@+id/tvBNameBuyer" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCountryBuyer"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/account_number"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etBankName" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etAccountNo"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/account_number"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCountryBuyer" />
+
+
+                    <!--<androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStateBuyer"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/bank_name"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etAccountNo" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etBranchName"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/bank_name"
+                        android:inputType="number"
+                        app:layout_constraintTop_toBottomOf="@+id/tvStateBuyer" />
+-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCityBuyer"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/ifsc_code"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etAccountNo" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etIFSCCODE"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/ifsc_code"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCityBuyer" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/etIFSCCODE" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rlAddressBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

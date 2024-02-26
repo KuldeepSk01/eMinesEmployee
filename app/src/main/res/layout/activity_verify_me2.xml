@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+<variable
+    name="mViewModel"
+    type="com.emines_employee.screen.verifyme2.VerifyMe2ViewModel" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/nSVOTP"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollIndicators="none"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".screen.verifyme2.VerifyMe2Activity">
+                <RelativeLayout
+                    android:id="@+id/rlToolbarVerifyMe2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+                    <include android:id="@+id/toolbarVerifyMe2"
+                        layout="@layout/layout_custom_toolbar"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlVerifyProfileImg"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:padding="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/verify_profile_outline"
+                    app:layout_constraintTop_toBottomOf="@+id/rlToolbarVerifyMe2"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    app:layout_constraintStart_toStartOf="parent">
+                   <androidx.cardview.widget.CardView
+                       app:cardElevation="0dp"
+                       app:cardCornerRadius="@dimen/_100sdp"
+                       android:layout_width="@dimen/_200sdp"
+                       android:layout_height="@dimen/_200sdp">
+                       <androidx.appcompat.widget.AppCompatImageView
+                           android:id="@+id/ivVerifyImg"
+                           android:layout_width="match_parent"
+                           android:elevation="@dimen/_5sdp"
+                           android:scaleType="fitXY"
+                           android:layout_height="match_parent"/>
+                   </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVerifyProfileTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextStyle4"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/rlVerifyProfileImg"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/gajendra_singh_agm_noida"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVerifyProfileCPresentBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/defaultBtnStyle"
+                    android:gravity="center"
+                    android:onClick="@{()->mViewModel.onPresentClickBtn()}"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVerifyProfileTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/present"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVerifyProfileApplyLeaveBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/defaultBtnStyle"
+                    android:gravity="center"
+                    android:onClick="@{()->mViewModel.onClickApplyLeaveMeBtn()}"
+                    android:background="@drawable/default_btn_drawable2"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVerifyProfileCPresentBtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/apply_leave"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVerifyProfileLocationDateText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/defaultTextStyle"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/inter_medium"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/tvVerifyProfileApplyLeaveBtn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/verifyme2_location_text"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</layout>

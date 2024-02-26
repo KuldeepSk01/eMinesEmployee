@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.dashboard.home.createorders.devicedetail.DeviceQuestions2Activity">
+
+        <ScrollView
+            android:id="@+id/nSVTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/viewAttendance"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/ic_toolbar_bg_1" />
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarUploadImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarUploadImg"
+                        layout="@layout/layout_custom_toolbar" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rlToolBarUploadImg"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/top_rounded_corner">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clQuestionLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvQuesQuestionLayout2"
+                            style="@style/TextStyle1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:textSize="@dimen/_10ssp"
+                            android:text="@string/do_you_have_weight_machine_near_by_text"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/inter_regular"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llc1QuestionLayout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/et_bg_drawable"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_10sdp"
+                            android:gravity="center_vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvQuesQuestionLayout2">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv1QuestionLayout2"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/ic_unselect_checkbox" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/rbStockImg1QuestionLayout2"
+                                style="@style/defaultTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:text="@string/yes"
+                                android:textColor="@color/black" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llc2QuestionLayout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/et_bg_drawable"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:padding="@dimen/_10sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/llc1QuestionLayout2">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv2QuestionLayout2"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/ic_unselect_checkbox" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/rbStockImg2QuestionLayout2"
+                                style="@style/defaultTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:text="@string/no"
+                                android:textColor="@color/black" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvSImgDetailWMachineQuestionLayout2"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/name_of_weighing_machine_text"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/llc2QuestionLayout2" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etSImgDetailWMachineQuestionLayout2"
+                            style="@style/editTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:hint="@string/name_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvSImgDetailWMachineQuestionLayout2" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvSImgDetailAWMachineQuestionLayout2"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/name_of_weighing_machine_text"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etSImgDetailWMachineQuestionLayout2" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etSImgDetailAWMachineQuestionLayout2"
+                            style="@style/editTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:hint="@string/address_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvSImgDetailAWMachineQuestionLayout2" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <!--question layout3-->
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

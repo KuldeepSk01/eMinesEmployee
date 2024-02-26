@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+   <!-- <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.STORAGE" />-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+
+    <!--first release allowBackup true-->
+    <application
+        android:name=".application.EMinesEmployeeApplication"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Base.Theme.EMinesEmployee"
+        tools:targetApi="31">
+        <activity
+            android:name=".screen.dashboard.buyer.buyerorders.vieworders.BuyingReqDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".screen.dashboard.buyer.createrequest.address.AddAddressActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".screen.dashboard.buyer.createrequest.address.AddressListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".screen.dashboard.buyer.buyerorders.BuyerOrderActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!-- activity open for Seller -->
+        <activity
+            android:name=".screen.dashboard.seller.addseller.bankinfo.AddSellerBankActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".screen.dashboard.seller.addseller.companyinfo.AddSellerCompanyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".screen.dashboard.seller.addseller.contactinfo.AddSellerContactActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".screen.dashboard.seller.addseller.kyc.AddSellerKYCActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".screen.dashboard.seller.viewseller.address.SellerAddressListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".screen.dashboard.seller.viewseller.address.SellerEditAddressActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".screen.dashboard.seller.viewseller.bank.ViewSellerBankActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".screen.dashboard.seller.viewseller.company.ViewSellerCompanyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".screen.dashboard.seller.viewseller.contact.ViewSellerContactActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+
+        <activity
+            android:name=".screen.dashboard.seller.viewseller.kyc.ViewSellerKYCActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <!-- activity close for Seller -->
+
+
+        <!-- If any exception is coming when selecting file -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider> <!-- for view buyer info open -->
+
+        <activity
+            android:name=".screen.dashboard.buyer.viewbuyer.bankinfo.ViewBuyerBankActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".screen.dashboard.buyer.viewbuyer.addressinfo.AddressInfoListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+      <!--  <activity
+            android:name=".screen.dashboard.buyer.createrequest.address.AddressListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />-->
+
+        <activity
+            android:name=".screen.dashboard.buyer.viewbuyer.addressinfo.EditAddressActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.buyer.viewbuyer.compayinfo.ViewBuyerCompanyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.buyer.viewbuyer.kycinfo.ViewBuyerKYCActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.buyer.viewbuyer.contactinfo.ViewBuyerContactActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".screen.dashboard.buyer.buyerorders.vieworders.DeliveredOrderDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.buyer.buyerorders.vieworders.InProcessDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <!-- for view buyer info close -->
+        <activity
+            android:name=".screen.dashboard.orders.detail.OrderDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".screen.dashboard.home.target.TargetDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".screen.dashboard.home.createorders.payment.PaymentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.home.createorders.date.DateAndTimeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.home.createorders.date.DateAndTimeOtherActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_map_api_key" />
+
+        <activity
+            android:name=".screen.map.MapActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.home.createorders.devicedetail.DeviceQuestions3Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.home.createorders.devicedetail.DeviceQuestions2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.home.createorders.devicedetail.DeviceQuestionsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.home.createorders.devicedetail.DeviceDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.buyer.createrequest.selectcategory.SelectCategoryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.home2.duty.DutyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.home2.post.PostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.home.attendance.AttendanceSelectDateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.home2.Home2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <!-- buyers activity -->
+        <activity
+            android:name=".screen.dashboard.buyer.addbuyer.bankinfo.AddBuyerBankActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.buyer.addbuyer.companyinfo.AddBuyerCompanyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.buyer.addbuyer.contactinfo.AddBuyerContactActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.buyer.addbuyer.kyc.AddBuyerKYCActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+       <!-- <activity
+            android:name=".screen.dashboard.add"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.home.addbuyer.kyc.BuyerKYCActivity"
+            android:exported="false" />-->
+
+        <!-- seller activity -->
+        <!-- activities for profile fragment -->
+        <activity
+            android:name=".screen.dashboard.profile.profile.ProfileInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.profile.address.ProfileAddressActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.profile.address.ProfileAddressListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.profile.kyc.ProfileKYCActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.profile.bank.ProfileAccountActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" /> <!-- activities for pickup fragment -->
+      <!--  <activity
+            android:name=".screen.dashboard.seller.uploadstock.UploadStockImagesActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />-->
+        <activity
+            android:name=".screen.dashboard.home.target.TargetsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.verifyme2.ApplyLeaveActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.verifyme2.VerifyMe2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.verifyme.VerifyMeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.login.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.otpverification.OTPVerificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screen.onboarding.OnBoardingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

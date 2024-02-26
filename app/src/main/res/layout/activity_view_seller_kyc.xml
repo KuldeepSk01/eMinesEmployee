@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.dashboard.seller.addseller.kyc.AddSellerKYCActivity">
+
+        <ScrollView
+            android:id="@+id/nSVTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_50sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rlToolBarSellerKYC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/toolbarSellerKYC"
+                        layout="@layout/layout_custom_toolbar2" />
+                </RelativeLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlToolBarSellerKYC"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvContactSellerKYC"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_contact" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/contact"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvContactSellerKYC"
+                        app:layout_constraintStart_toStartOf="@+id/cvContactSellerKYC"
+                        app:layout_constraintTop_toBottomOf="@+id/cvContactSellerKYC" />
+
+                    <View
+                        android:id="@+id/line1SellerKYC"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/primary_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvContactSellerKYC"
+                        app:layout_constraintStart_toEndOf="@+id/cvContactSellerKYC"
+                        app:layout_constraintTop_toTopOf="@+id/cvContactSellerKYC" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvAddressSellerKYC"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line1SellerKYC"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_white_info" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/company_info"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvAddressSellerKYC"
+                        app:layout_constraintStart_toStartOf="@+id/cvAddressSellerKYC"
+                        app:layout_constraintTop_toBottomOf="@+id/cvAddressSellerKYC" />
+
+                    <View
+                        android:id="@+id/line2SellerKYC"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/primary_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvAddressSellerKYC"
+                        app:layout_constraintStart_toEndOf="@+id/cvAddressSellerKYC"
+                        app:layout_constraintTop_toTopOf="@+id/cvAddressSellerKYC" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvKYCSellerKYC"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:backgroundTint="@color/primary_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/line2SellerKYC"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_white_kyc" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/kyc_text"
+                        android:textColor="@color/primary_color"
+                        app:layout_constraintEnd_toEndOf="@+id/cvKYCSellerKYC"
+                        app:layout_constraintStart_toStartOf="@+id/cvKYCSellerKYC"
+                        app:layout_constraintTop_toBottomOf="@+id/cvKYCSellerKYC" />
+
+                    <View
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:background="@color/status_bar_color"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvKYCSellerKYC"
+                        app:layout_constraintStart_toEndOf="@+id/cvKYCSellerKYC"
+                        app:layout_constraintTop_toTopOf="@+id/cvKYCSellerKYC" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clAInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clDInfo"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_100sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoType"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pan_number"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerPanNo"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/pan_number"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoType" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etUploadSellerPan"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/ic_upload"
+                        android:gravity="center"
+                        android:hint="@string/upload_pan"
+                        android:padding="@dimen/_8sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerPanNo" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivUploadSellerPan"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/etUploadSellerPan"
+                        app:shapeAppearance="@style/shapeableImageStyle" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAInfoState"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/aadhaar_number"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivUploadSellerPan" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerAadhaarNo"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/aadhaar_number"
+                        android:inputType="number"
+                        android:maxLength="12"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAInfoState" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etUploadSellerAadhaarNo"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/ic_upload"
+                        android:gravity="center"
+                        android:hint="@string/upload_aadhar"
+                        android:padding="@dimen/_8sdp"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerAadhaarNo" />
+
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivUploadSellerAadhaar"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/etUploadSellerAadhaarNo"
+                        app:shapeAppearance="@style/shapeableImageStyle" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvGSTNo"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/gst_number"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivUploadSellerAadhaar" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerGSTNo"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/gst_number"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvGSTNo" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etUploadSellerGST"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/ic_upload"
+                        android:gravity="center"
+                        android:hint="@string/upload_gs"
+                        android:padding="@dimen/_8sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerGSTNo" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivUploadSellerGstImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/etUploadSellerGST"
+                        app:shapeAppearance="@style/shapeableImageStyle" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSellerEnvironmentNo"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/environment_certificate_number"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivUploadSellerGstImg" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerEnvironmentNo"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/environment_certificate_number"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSellerEnvironmentNo" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etUploadSellerEnvironmentNo"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/ic_upload"
+                        android:gravity="center"
+                        android:hint="@string/upload_environment_certificate"
+                        android:padding="@dimen/_8sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerEnvironmentNo" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivUploadSellerEnvironmentImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/etUploadSellerEnvironmentNo"
+                        app:shapeAppearance="@style/shapeableImageStyle" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCancelChequeNo"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/cancel_cheque"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ivUploadSellerEnvironmentImg" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etSellerCancelChequeNo"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/cancel_cheque"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCancelChequeNo" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etUploadSellerCancelChequeNo"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/ic_upload"
+                        android:gravity="center"
+                        android:hint="@string/upload_cancel_cheque"
+                        android:padding="@dimen/_8sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/etSellerCancelChequeNo" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivUploadSellerCancelChequeNoImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/etUploadSellerCancelChequeNo"
+                        app:shapeAppearance="@style/shapeableImageStyle" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rlAddressBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomButtons"
+                layout="@layout/layout_bottom_two_btn" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

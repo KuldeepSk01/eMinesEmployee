@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clItemTarget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/otp_bg_drawable">
+
+        <RelativeLayout
+            android:id="@+id/rlQuestBtn"
+            style="@style/Home2BuyerBtnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQ1ItemTarget"
+                style="@style/TextStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="@string/q1_2023"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQ1ItemTargetPercent"
+                style="@style/TextStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/_100"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemTargetDate"
+            style="@style/TextStyle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="@string/apr_may_jun"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintTop_toBottomOf="@+id/rlQuestBtn" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemTargetSales"
+            style="@style/defaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/target_value"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemTargetDate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemTargetValue"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/_20_00_000_rs"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemTargetSales" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemTargetAchieved"
+            style="@style/defaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/achieved_value"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemTargetDate" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemTargetAchievedValue"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/_20_00_000_rs"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemTargetAchieved" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
