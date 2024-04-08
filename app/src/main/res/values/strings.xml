@@ -165,7 +165,7 @@
     <string name="upload_gs">Upload GST Certificate</string>
     <string name="account_name">Account Name</string>
     <string name="account_number">Account Number</string>
-    <string name="bank_name">Bank Name</string>
+    <string name="bank_name">Branch</string>
     <string name="ifsc_code">IFSC Code</string>
     <string name="add_more_text">Add More</string>
     <string name="_3068_woodlawn_drive_milwaukee_n414_672_5388_text">1460  Jenric Lane, Ashmor Drive Florida 414-672-5388</string>
@@ -216,6 +216,7 @@
 -->
 
     <string name="buyer">Buyer</string>
+    <string name="others">Others</string>
     <string name="update">Update</string>
     <string name="create_pickup">Create Pickup</string>
     <string name="active">Active</string>
@@ -312,7 +313,7 @@
     <string name="error_mobile_empty">Mobile number is Empty !</string>
     <string name="error_email_empty">Email is Empty !</string>
     <string name="error_full_name_empty">Full Name is Empty !</string>
-    <string name="error_buyer_type_empty">Please select buyer type !</string>
+    <string name="error_buyer_type_empty">Please select type !</string>
 
 
     <string name="error_valid_email">Please enter valid email!</string>
@@ -416,6 +417,7 @@
     <string name="status">Status :</string>
     <string name="reached">Reached</string>
     <string name="no_data_available">Opps! No Order Available.</string>
+    <string name="no_log_data_available">Opps! No ActivityLog !!</string>
     <string name="delivered">Delivered</string>
     <string name="assigned">Assigned</string>
     <string name="new_order">New Order</string>
@@ -456,6 +458,21 @@
     <string name="transporter_accepted_order">Transporter Accepted, Order</string>
     <string name="defaultID">PR00</string>
     <string name="assigned_to_transporter">Assigned To transporter :</string>
+    <string name="inactive">Inactive</string>
+    <string name="grn_number">GRN Number :</string>
+    <string name="selling_request">Selling Request</string>
+    <string name="add_address">Add address</string>
+    <string name="edit_address">Edit Address</string>
+    <string name="manage_activity_amp_log"><![CDATA[Manage Activity & Log]]></string>
+    <string name="activity_log">Activity Log</string>
+    <string name="add_activity_log">Add Activity Log</string>
+    <string name="call">Call</string>
+    <string name="meeting">Meeting</string>
+    <string name="personal_task">Personal Task</string>
+    <string name="filter_by">Filter by :</string>
+    <string name="scheduled">Scheduled</string>
+    <string name="re_scheduled">Re-scheduled</string>
+    <string name="please_select_activity_type">Please select Activity Type !</string>
     <string-array name="order_id">
         <item>101</item>
         <item>102</item>

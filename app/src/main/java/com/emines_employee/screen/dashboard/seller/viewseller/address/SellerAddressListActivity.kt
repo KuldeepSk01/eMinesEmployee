@@ -41,6 +41,7 @@ class SellerAddressListActivity : BaseActivity(), AdapterBuyerAddressListener {
             toolbarBSA.tvToolBarTitle2.apply {
                 setTextColor(ResourcesCompat.getColor(resources, R.color.white, null))
                 text = getString(R.string.select_address)
+
             }
             if (buyerDetail.isEditBuyer) {
                 tvAddMoreSelectAddressBtn.setOnClickListener {

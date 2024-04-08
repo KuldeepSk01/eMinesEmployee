@@ -79,7 +79,6 @@ class LoginActivity : BaseActivity() {
                     val b = Bundle()
                     b.putSerializable(Constants.DefaultConstant.OTP_DETAIL,it.data!!)
                     launchActivity(OTPVerificationActivity::class.java,Constants.DefaultConstant.BUNDLE_KEY,b)
-                    finish()
 
                 }
                 ApiResponse.Status.ERROR->{

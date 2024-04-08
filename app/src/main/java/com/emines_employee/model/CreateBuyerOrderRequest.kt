@@ -5,7 +5,8 @@ import java.io.Serializable
 
 data class CreateBuyerOrderRequest(
     var goodsList: List<BuyerGoods> = mutableListOf(),
-    var buyer: BuyersResponse? = null
+    var buyer: BuyersResponse? = null,
+    var seller: BuyersResponse? = null
 ) : Serializable
 
 

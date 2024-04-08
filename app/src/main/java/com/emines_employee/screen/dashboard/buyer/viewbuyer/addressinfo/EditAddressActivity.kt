@@ -33,13 +33,13 @@ class EditAddressActivity : BaseActivity() {
     private val mViewModel: BuyersAddressViewModel by inject()
     private var stateList = mutableListOf<BuyerAddressStateResponse>()
     private lateinit var buyerID: String
-    private var stateId: Int = -1
-    private var countryId: Int = 101
+    private var stateId: String = "0"
+    private var countryId: String = "101"
 
     override fun onCreateInit(binding: ViewDataBinding?) {
         mBind = binding as ActivityBuyerEditAddressBinding
         mBind.apply {
-            toolbarBBA.tvToolBarTitle2.text = "${getString(R.string.address)}"
+            toolbarBBA.tvToolBarTitle2.text = getString(R.string.edit_address)
             val buyerAddressDetail = intent.getBundleExtra(Constants.DefaultConstant.BUNDLE_KEY)
                 ?.serializable<BuyerAddressResponse>(
                     Constants.DefaultConstant.MODEL_DETAIL
@@ -48,9 +48,8 @@ class EditAddressActivity : BaseActivity() {
 
             buyerAddressDetail?.let {
                 buyerID = it.buyer_id.toString()
-                stateId = it.state.toInt()
-                countryId = it.country.toInt()
-
+                stateId = it.state
+                countryId = it.country
                 etAInfoType.text = it.address_type
                 etAInfoTypeArea.setText(it.area)
                 etAInfoTypeCity.setText(it.city)
@@ -83,15 +82,23 @@ class EditAddressActivity : BaseActivity() {
                         }
                     }).show()
             }
+
             etAInfoTypeState.setOnClickListener {
-                if (stateList.isEmpty()) {
-                    mViewModel.hitStateListApi(buyerID.toInt())
-                    mViewModel.getStateListResponse()
-                        .observe(this@EditAddressActivity, stateListObserver)
-                } else {
-                    mLog("second Call state $stateList")
-                   // popupDialog(stateList)
-                }
+
+                //mViewModel.hitStateListApi(buyerID.toInt())
+                mViewModel.hitStateListApi()
+                mViewModel.getStateListResponse()
+                    .observe(this@EditAddressActivity, stateListObserver)
+
+//                if (stateList.isEmpty()) {
+//                    mViewModel.hitStateListApi(buyerID.toInt())
+//                    mViewModel.getStateListResponse()
+//                        .observe(this@EditAddressActivity, stateListObserver)
+//                } else {
+//                    mLog("second Call state $stateList")
+//                   // popupDialog(stateList)
+//                }
+
             }
 
 
@@ -159,7 +166,7 @@ class EditAddressActivity : BaseActivity() {
                     stateList.clear()
                     stateList = it.data?.data as MutableList<BuyerAddressStateResponse>
                     mLog("Fist Call state $stateList")
-                    //popupDialog(stateList)
+                    popupDialog(stateList)
                 }
 
                 ApiResponse.Status.ERROR -> {
@@ -168,6 +175,35 @@ class EditAddressActivity : BaseActivity() {
                 }
             }
         }
+    }
+    private fun popupDialog(list: List<BuyerAddressStateResponse>) {
+        val alertDialog = Dialog(this@EditAddressActivity)
+        val b = DataBindingUtil.inflate<DailogCustomTextListBinding>(
+            LayoutInflater.from(this@EditAddressActivity),
+            R.layout.dailog_custom_text_list,
+            null,
+            false
+        )
+        b.rvCustomList.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = CustomTextPickerAdapter(list as MutableList<BuyerAddressStateResponse>,
+                this@EditAddressActivity, object : CustomTextPickerAdapter.OnStatePickerListener {
+                    override fun onStatePicker(model: BuyerAddressStateResponse) {
+                        mBind.etAInfoTypeState.text = model.statename
+                        mLog("state pick ${model.toString()}")
+                        stateId = model.id.toString()
+                        countryId = model.country_id.toString()
+                        alertDialog.dismiss()
+                    }
+                })
+
+        }
+        alertDialog.setCancelable(false)
+        alertDialog.setCanceledOnTouchOutside(true)
+        alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        alertDialog.setContentView(b.root)
+        alertDialog.create()
+        alertDialog.show()
     }
 
 /*

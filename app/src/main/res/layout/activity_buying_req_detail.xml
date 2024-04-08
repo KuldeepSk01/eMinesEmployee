@@ -1266,7 +1266,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:text="GRN Number :"
+                        android:text="@string/grn_number"
                         android:textSize="@dimen/_10ssp"
                         app:fontFamily="@font/inter_semi_bold" />
 
@@ -1276,7 +1276,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_5sdp"
-                        android:text=" Assdn12"
                         android:textColor="@color/blue_color_1"
                         android:textSize="@dimen/_10ssp"
                         app:fontFamily="@font/inter_semi_bold" />

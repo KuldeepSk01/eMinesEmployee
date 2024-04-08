@@ -41,13 +41,19 @@ class ViewSellerKYCActivity : BaseActivity() {
                 etGSTNo.setText(it.gst_no)
 
                 etUploadPan.apply {
-                    if (checkIsImageExtensions(it.pan_file)) {
-                        Glide.with(this@ViewSellerKYCActivity).load(it.pan_file).into(this)
-                    } else {
+                    if (it.pan_file.isNullOrEmpty()) {
                         Glide.with(this@ViewSellerKYCActivity)
-                            .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
-                            .into(this)
+                            .load(Constants.ImagesUrl.NO_IMAGE_AVAILABLE).into(this)
+                    } else {
+                        if (checkIsImageExtensions(it.pan_file)) {
+                            Glide.with(this@ViewSellerKYCActivity).load(it.pan_file).into(this)
+                        } else {
+                            Glide.with(this@ViewSellerKYCActivity)
+                                .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
+                                .into(this)
+                        }
                     }
+
                     setOnClickListener { click ->
                         if (it.pan_file.isEmpty()) {
                             mToast(context.getString(R.string.file_not_uploaded))
@@ -78,13 +84,19 @@ class ViewSellerKYCActivity : BaseActivity() {
 
                 }
                 etUploadAadhaar.apply {
-                    if (checkIsImageExtensions(it.aadhar_file)) {
-                        Glide.with(this@ViewSellerKYCActivity).load(it.aadhar_file).into(this)
-                    } else {
+                    if (it.pan_file.isNullOrEmpty()) {
                         Glide.with(this@ViewSellerKYCActivity)
-                            .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
-                            .into(this)
+                            .load(Constants.ImagesUrl.NO_IMAGE_AVAILABLE).into(this)
+                    } else {
+                        if (checkIsImageExtensions(it.aadhar_file)) {
+                            Glide.with(this@ViewSellerKYCActivity).load(it.aadhar_file).into(this)
+                        } else {
+                            Glide.with(this@ViewSellerKYCActivity)
+                                .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
+                                .into(this)
+                        }
                     }
+
                     setOnClickListener { click ->
                         if (it.aadhar_file.isEmpty()) {
                             mToast(context.getString(R.string.file_not_uploaded))
@@ -115,13 +127,20 @@ class ViewSellerKYCActivity : BaseActivity() {
 
                 }
                 etUploadGST.apply {
-                    if (checkIsImageExtensions(it.gst_file)) {
-                        Glide.with(this@ViewSellerKYCActivity).load(it.gst_file).into(this)
-                    } else {
+                    if (it.pan_file.isNullOrEmpty()) {
                         Glide.with(this@ViewSellerKYCActivity)
-                            .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
-                            .into(this)
+                            .load(Constants.ImagesUrl.NO_IMAGE_AVAILABLE).into(this)
+                    } else {
+                        if (checkIsImageExtensions(it.gst_file)) {
+                            Glide.with(this@ViewSellerKYCActivity).load(it.gst_file).into(this)
+                        } else {
+                            Glide.with(this@ViewSellerKYCActivity)
+                                .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
+                                .into(this)
+                        }
                     }
+
+
                     setOnClickListener { click ->
                         if (it.gst_file.isEmpty()) {
                             mToast(context.getString(R.string.file_not_uploaded))
@@ -149,6 +168,7 @@ class ViewSellerKYCActivity : BaseActivity() {
                                 }).show()
                         }
                     }
+
 
                 }
 

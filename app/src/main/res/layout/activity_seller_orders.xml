@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nSVTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollIndicators="none"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".screen.dashboard.buyer.buyerBuyerOrders.BuyerBuyerOrderActivity">
+
+
+            <RelativeLayout
+                android:id="@+id/rlToolBarBuyerOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    android:id="@+id/toolBarBuyerOrder"
+                    layout="@layout/layout_custom_toolbar" />
+            </RelativeLayout>
+
+            <!-- <androidx.appcompat.widget.AppCompatTextView
+                 android:id="@+id/tvBuyerName"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintTop_toBottomOf="@+id/rlToolBarBuyerOrder"
+                 android:layout_width="match_parent"
+                 android:gravity="center"
+                 android:text="Kuldeep Corporate pvt ldt."
+                 android:layout_height="wrap_content"/>-->
+            <HorizontalScrollView
+                android:id="@+id/hSV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollIndicators="none"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@+id/rlToolBarBuyerOrder">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout2BuyerOrder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabSelectedTextAppearance="@style/selectedTabStyle"
+                    app:tabTextAppearance="@style/tabTextStyle">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selling_request" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/purchase_order" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/orders" />
+
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pick_up" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/in_process" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/delivered" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+            </HorizontalScrollView>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBuyerOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:clipToPadding="true"
+                android:paddingBottom="@dimen/_50sdp"
+                app:layout_constraintTop_toBottomOf="@+id/hSV"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_order_layout" />
+
+            <RelativeLayout
+                android:id="@+id/rlNoDataAvailable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_150sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hSV">
+
+                <ImageView
+                    android:id="@+id/no_shift_image"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_calendar" />
+
+                <TextView
+                    android:id="@+id/no_shift_textView"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/no_shift_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:text="@string/no_data_available"
+                    android:textColor="@color/hint_text_color"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

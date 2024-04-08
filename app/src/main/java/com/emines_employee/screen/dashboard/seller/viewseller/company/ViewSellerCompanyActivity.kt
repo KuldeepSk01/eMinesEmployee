@@ -10,6 +10,7 @@ import com.emines_employee.screen.dashboard.buyer.createrequest.address.AddressL
 import com.emines_employee.screen.dashboard.buyer.viewbuyer.addressinfo.AddressInfoListActivity
 import com.emines_employee.screen.dashboard.seller.viewseller.address.SellerAddressListActivity
 import com.emines_employee.screen.dashboard.seller.viewseller.address.SellerEditAddressActivity
+import com.emines_employee.screen.dashboard.seller.viewseller.kyc.ViewSellerKYCActivity
 import com.emines_employee.util.Constants
 import com.emines_employee.util.serializable
 
@@ -49,10 +50,15 @@ class ViewSellerCompanyActivity : BaseActivity() {
                         val b = Bundle()
                         b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL, buyerDetail)
                         launchActivity(
-                            SellerAddressListActivity::class.java,
+                            ViewSellerKYCActivity::class.java,
                             Constants.DefaultConstant.BUNDLE_KEY,
                             b
                         )
+                        /*launchActivity(
+                            SellerAddressListActivity::class.java,
+                            Constants.DefaultConstant.BUNDLE_KEY,
+                            b
+                        )*/
                     }
                 }
             }

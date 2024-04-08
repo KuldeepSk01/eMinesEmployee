@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlItemPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemScheduleTime"
+            style="@style/TextStyle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/inter_regular"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_account"
+            android:text="@string/webkype_info_pvt" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_below="@+id/tvItemScheduleTime"
+            android:background="@color/hint_text_color" />
+
+    </RelativeLayout>
+</layout>

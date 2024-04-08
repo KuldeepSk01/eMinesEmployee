@@ -74,7 +74,7 @@ class SellerEditAddressActivity : BaseActivity() {
             }
             etAInfoTypeState.setOnClickListener {
                 if (stateList.isEmpty()) {
-                    mViewModel.hitStateListApi(buyerID.toInt())
+                    mViewModel.hitStateListApi()
                     mViewModel.getStateListResponse()
                         .observe(this@SellerEditAddressActivity, stateListObserver)
                 } else {

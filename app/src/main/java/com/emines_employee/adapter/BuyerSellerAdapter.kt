@@ -17,7 +17,8 @@ import com.emines_employee.util.formatDate
 
 class BuyerSellerAdapter(
     val list: MutableList<BuyersResponse>, val context: Context,
-    private val listener: OnCreateBuyerSellerListener
+    private val listener: OnCreateBuyerSellerListener,
+    private var isBuyer:Boolean
 ) :
     RecyclerView.Adapter<BuyerSellerAdapter.BuyerSellerVM>() {
     class BuyerSellerVM(val b: ItemBuyerLayoutBinding) : ViewHolder(b.root)
@@ -43,7 +44,29 @@ class BuyerSellerAdapter(
                 .into(ivItemBuyer)
             tvTitleItemBuyer.text = model.company_name
             tvItemBuyerName.text = model.name
-            tvTypeBuyerSellerItemBuyer.text = model.buyer_type
+
+            if (model.displayflag=="1"){
+                tvItemBuyerStatus.text = context.getString(R.string.active)
+                tvItemBuyerStatus.setTextColor(context.getColor(R.color.primary_color))
+            }else{
+                tvItemBuyerStatus.text  = context.getString(R.string.inactive)
+                tvItemBuyerStatus.setTextColor(context.getColor(R.color.red_alert_color))
+            }
+
+           /* tvItemBuyerStatus.apply {
+                if (model.displayflag=="1"){
+                    text = this.context.getString(R.string.active)
+                    setTextColor(this.context.getColor(R.color.primary_color))
+                }else{
+                    text = this.context.getString(R.string.inactive)
+                    setTextColor(this.context.getColor(R.color.red_alert_color))
+                }
+            }*/
+
+
+            tvTypeBuyerSellerItemBuyer.text = if (isBuyer) model.buyer_type else model.seller_type
+
+
             tvAddressItemBuyer.text = model.financial_address
             tvItemBuyerDateOfA.text = String.format("%s %s","Add :",
                 formatDate(model.created_at, "yyyy-MM-dd'T'HH:mm:ss", "dd MMM yyyy")
@@ -74,11 +97,18 @@ class BuyerSellerAdapter(
 //            }
 
             tvItemBuyerBuyingReq.apply {
-                text = String.format(
+                text=  if(isBuyer) {
+                    String.format(
+                        "%s%s",
+                        context.getString(R.string.buying_req),
+                        "(${model.buying_requests.toString()})"
+                    )
+                }
+                else{ String.format(
                     "%s%s",
-                    context.getString(R.string.buying_req),
+                    context.getString(R.string.selling_request),
                     "(${model.buying_requests.toString()})"
-                )
+                ) }
 
                 setOnClickListener {
                     listener.onClickBuyingRequest(model)

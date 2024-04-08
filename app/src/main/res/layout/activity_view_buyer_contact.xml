@@ -105,7 +105,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_address" />
+                            android:src="@drawable/ic_green_info" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -114,7 +114,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:text="@string/address"
+                        android:text="@string/company_info"
                         android:textColor="@color/hint_text_color"
                         app:layout_constraintEnd_toEndOf="@+id/cvAddressBCA"
                         app:layout_constraintStart_toStartOf="@+id/cvAddressBCA"
@@ -214,7 +214,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/etBuyerType" />
 
-                    <androidx.appcompat.widget.AppCompatEditText
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/etFullName"
                         style="@style/editTextStyle"
                         android:layout_width="match_parent"
@@ -237,7 +237,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/etFullName" />
 
-                    <androidx.appcompat.widget.AppCompatEditText
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/etDEmail"
                         style="@style/editTextStyle"
                         android:layout_width="match_parent"
@@ -261,7 +261,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/etDEmail" />
 
-                    <androidx.appcompat.widget.AppCompatEditText
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/etDMobile"
                         style="@style/editTextStyle"
                         android:layout_width="match_parent"

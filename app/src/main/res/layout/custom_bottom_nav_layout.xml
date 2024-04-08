@@ -6,6 +6,7 @@
     <data>
 
     </data>
+
     <androidx.cardview.widget.CardView
 
         android:layout_width="match_parent"
@@ -15,10 +16,11 @@
         android:layout_marginBottom="@dimen/_10sdp"
         android:backgroundTint="@color/white"
         app:cardCornerRadius="@dimen/_5sdp">
+
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:elevation="@dimen/_5sdp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_5sdp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/clHomeNav"
@@ -122,7 +124,7 @@
                     android:layout_width="@dimen/_15sdp"
                     android:layout_height="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/ic_order"
+                    android:background="@drawable/ic_activity_log_unselect"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -133,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
-                    android:text="@string/orders"
+                    android:text="@string/activity_log"
                     android:textColor="@color/hint_text_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/ivOrderIcon"
@@ -161,14 +163,14 @@
                     android:id="@+id/tvAccountNav"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:text="@string/profile"
                     android:textColor="@color/hint_text_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/ivAccountIcon"
                     app:layout_constraintStart_toStartOf="@id/ivAccountIcon"
-                    app:layout_constraintTop_toBottomOf="@+id/ivAccountIcon"
-                    android:layout_marginTop="@dimen/_5sdp" />
+                    app:layout_constraintTop_toBottomOf="@+id/ivAccountIcon" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 

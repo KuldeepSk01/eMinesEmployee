@@ -32,9 +32,9 @@ class ViewBuyerContactActivity : BaseActivity() {
             )
             buyerDetail?.let {
                 etBuyerType.text = it.buyer_type
-                etFullName.setText(it.name)
-                etDEmail.setText(it.email)
-                etDMobile.setText(it.phone)
+                etFullName.text = it.name
+                etDEmail.text = it.email
+                etDMobile.text = it.phone
                 if (!it.profile_pic.isNullOrEmpty()){
                     etViewProfile.apply {
                         Glide.with(this@ViewBuyerContactActivity).load(it.profile_pic).into(this)

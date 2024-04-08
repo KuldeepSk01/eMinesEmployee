@@ -10,22 +10,23 @@
         android:id="@+id/clItemSellFilter"
         android:layout_width="@dimen/_80sdp"
         android:layout_height="wrap_content"
-        android:padding="@dimen/_5sdp">
+        android:padding="@dimen/_5sdp"
+        >
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clFilterIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/category_selection_drawable"
+            android:background="@drawable/category_unselection_drawable"
             android:padding="@dimen/_5sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_50ssp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -36,6 +37,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50ssp"
                     android:scaleType="fitXY"
+                    android:padding="@dimen/_5sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

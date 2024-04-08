@@ -14,14 +14,17 @@ import com.emines_employee.adapter.listener.OnCreateBuyerSellerListener
 import com.emines_employee.base.BaseFragment
 import com.emines_employee.base.CollectionBaseResponse
 import com.emines_employee.databinding.FragmentSellerBinding
-import com.emines_employee.model.User
 import com.emines_employee.model.request.AddSellerRequest
 import com.emines_employee.model.response.BuyersResponse
 import com.emines_employee.network.ApiResponse
-import com.emines_employee.screen.dashboard.buyer.viewbuyer.contactinfo.ViewBuyerContactActivity
+import com.emines_employee.screen.dashboard.buyer.buyerorders.BuyerOrderActivity
+import com.emines_employee.screen.dashboard.buyer.createrequest.selectcategory.SelectCategoryActivity
 import com.emines_employee.screen.dashboard.seller.addseller.contactinfo.AddSellerContactActivity
+import com.emines_employee.screen.dashboard.seller.createorderrequest.selectcategory.SellerSelectCategoryActivity
+import com.emines_employee.screen.dashboard.seller.sellerorder.SellerOrdersActivity
 import com.emines_employee.screen.dashboard.seller.viewseller.contact.ViewSellerContactActivity
 import com.emines_employee.util.Constants
+import com.emines_employee.util.getCalling
 import com.emines_employee.util.mLog
 import com.emines_employee.util.mToast
 import org.koin.core.component.inject
@@ -107,7 +110,12 @@ class SellersFragment : BaseFragment(), OnCreateBuyerSellerListener {
                     false
                 )
             adapter =
-                BuyerSellerAdapter(buyerList, mContext!!.applicationContext, this@SellersFragment)
+                BuyerSellerAdapter(
+                    buyerList,
+                    mContext!!.applicationContext,
+                    this@SellersFragment,
+                    false
+                )
         }
 
     }
@@ -128,13 +136,21 @@ class SellersFragment : BaseFragment(), OnCreateBuyerSellerListener {
     }
 
     override fun onCreateClick(model: BuyersResponse) {
+        val b = Bundle()
+        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL, model)
+        launchActivity(SellerSelectCategoryActivity::class.java,Constants.DefaultConstant.BUNDLE_KEY, b)
+
     }
 
     override fun onViewClick(model: BuyersResponse) {
         model.isEditBuyer = false
         val b = Bundle()
         b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL, model)
-        launchActivity(ViewSellerContactActivity::class.java, Constants.DefaultConstant.BUNDLE_KEY, b)
+        launchActivity(
+            ViewSellerContactActivity::class.java,
+            Constants.DefaultConstant.BUNDLE_KEY,
+            b
+        )
 
     }
 
@@ -142,15 +158,28 @@ class SellersFragment : BaseFragment(), OnCreateBuyerSellerListener {
     }
 
     override fun onCallClick(model: BuyersResponse) {
+        getCalling(requireContext(),model.phone)
     }
 
     override fun onClickBuyingRequest(model: BuyersResponse) {
+        val b = Bundle()
+        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL,model)
+        launchActivity(SellerOrdersActivity::class.java,Constants.DefaultConstant.BUNDLE_KEY,b)
+
     }
 
     override fun onClickPurchaseOrder(model: BuyersResponse) {
+        val b = Bundle()
+        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL,model)
+        launchActivity(SellerOrdersActivity::class.java,Constants.DefaultConstant.BUNDLE_KEY,b)
+
     }
 
     override fun onClickTotalOrder(model: BuyersResponse) {
+        val b = Bundle()
+        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL,model)
+        launchActivity(SellerOrdersActivity::class.java,Constants.DefaultConstant.BUNDLE_KEY,b)
+
     }
 
     /*   override fun onUpdate(model: BuyersResponse) {

@@ -4,6 +4,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -16,7 +17,7 @@ import com.emines_employee.model.response.UserResponse
 import com.emines_employee.network.ApiResponse
 import com.emines_employee.screen.dashboard.buyer.BuyersFragment
 import com.emines_employee.screen.dashboard.home.HomeFragment
-import com.emines_employee.screen.dashboard.orders.OrdersFragment
+import com.emines_employee.screen.dashboard.actvitylog.LOGActivityFragment
 import com.emines_employee.screen.dashboard.profile.ProfileFragment
 import com.emines_employee.screen.dashboard.seller.SellersFragment
 import com.emines_employee.util.mLog
@@ -35,7 +36,7 @@ class MainActivity : BaseActivity(), ActivityMainListener {
         const val HOME_FRAGMENT = 1
         const val BUYER_FRAGMENT = 2
         const val SELLER_FRAGMENT = 3
-        const val ORDER_FRAGMENT = 4
+        const val ACTIVITY_LOG_FRAGMENT = 4
         const val PROFILE_FRAGMENT = 5
 
     }
@@ -56,8 +57,8 @@ class MainActivity : BaseActivity(), ActivityMainListener {
         SellersFragment()
     }
 
-    private val ordersFragment: OrdersFragment by lazy {
-        OrdersFragment()
+    private val activityLogFragment: LOGActivityFragment by lazy {
+        LOGActivityFragment()
     }
 
     private val profileFragment: ProfileFragment by lazy {
@@ -69,6 +70,12 @@ class MainActivity : BaseActivity(), ActivityMainListener {
         mainListener = this@MainActivity
         mainListener.onReplaceFragment(homeFragment)
         onSelectBtn(HOME_FRAGMENT)
+
+      /*  onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+
+            }
+        })*/
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -96,14 +103,11 @@ class MainActivity : BaseActivity(), ActivityMainListener {
 
             }
             customBottomBarLayout.clOrderNav.setOnClickListener {
-                //mToast("Access Not Allowed !!")
-               // mainListener.onReplaceFragment(ordersFragment)
-                onSelectBtn(ORDER_FRAGMENT)
-
-
+                 mainListener.onReplaceFragment(activityLogFragment)
+                onSelectBtn(ACTIVITY_LOG_FRAGMENT)
             }
             customBottomBarLayout.clSellersNav.setOnClickListener {
-              //  mToast("Access Not Allowed !!")
+                //  mToast("Access Not Allowed !!")
                 mainListener.onReplaceFragment(sellerFragment)
                 onSelectBtn(SELLER_FRAGMENT)
 
@@ -130,7 +134,7 @@ class MainActivity : BaseActivity(), ActivityMainListener {
                 2 -> {
                     tvBuyersNav.setTextColor(resources.getColor(R.color.blue_color_2, null))
                     ivBuyersIcon.background =
-                        ResourcesCompat.getDrawable(resources, R.drawable.ic_unselect_client, null)
+                        ResourcesCompat.getDrawable(resources, R.drawable.ic_select_client, null)
                 }
 
                 3 -> {
@@ -138,7 +142,7 @@ class MainActivity : BaseActivity(), ActivityMainListener {
                     ivSellersIcon.background =
                         ResourcesCompat.getDrawable(
                             resources,
-                            R.drawable.ic_unselected_pickup,
+                            R.drawable.ic_selected_pickup,
                             null
                         )
                 }
@@ -146,13 +150,13 @@ class MainActivity : BaseActivity(), ActivityMainListener {
                 4 -> {
                     tvOrderNav.setTextColor(resources.getColor(R.color.blue_color_2, null))
                     ivOrderIcon.background =
-                        ResourcesCompat.getDrawable(resources, R.drawable.ic_order, null)
+                        ResourcesCompat.getDrawable(resources, R.drawable.ic_activity_log_select, null)
                 }
 
                 5 -> {
                     tvAccountNav.setTextColor(resources.getColor(R.color.blue_color_2, null))
                     ivAccountIcon.background =
-                        ResourcesCompat.getDrawable(resources, R.drawable.ic_account, null)
+                        ResourcesCompat.getDrawable(resources, R.drawable.ic_select_account, null)
                 }
             }
 
@@ -167,13 +171,13 @@ class MainActivity : BaseActivity(), ActivityMainListener {
             tvOrderNav.setTextColor(resources.getColor(R.color.default_text_color, null))
             tvAccountNav.setTextColor(resources.getColor(R.color.default_text_color, null))
             ivHomeIcon.background =
-                ResourcesCompat.getDrawable(resources, R.drawable.ic_selected_home, null)
+                ResourcesCompat.getDrawable(resources, R.drawable.ic_unselected_home, null)
             ivBuyersIcon.background =
                 ResourcesCompat.getDrawable(resources, R.drawable.ic_unselect_client, null)
             ivSellersIcon.background =
                 ResourcesCompat.getDrawable(resources, R.drawable.ic_unselected_pickup, null)
             ivOrderIcon.background =
-                ResourcesCompat.getDrawable(resources, R.drawable.ic_order, null)
+                ResourcesCompat.getDrawable(resources, R.drawable.ic_activity_log_unselect, null)
             ivAccountIcon.background =
                 ResourcesCompat.getDrawable(resources, R.drawable.ic_account, null)
 
@@ -182,24 +186,6 @@ class MainActivity : BaseActivity(), ActivityMainListener {
 
     }
 
-
-    override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount > 0) {
-            supportFragmentManager.popBackStack()
-        } else {
-            if (isBackPressAgain) {
-                super.onBackPressed()
-                onBackPressedDispatcher.onBackPressed()
-            } else {
-                isBackPressAgain = true
-                Toast.makeText(this@MainActivity, "Press back again to exit", Toast.LENGTH_SHORT)
-                    .show()
-                Handler(Looper.getMainLooper()).postDelayed({
-                    isBackPressAgain = false
-                }, 3000)
-            }
-        }
-    }
 
     override fun onReplaceFragment(fragment: Fragment) {
         replaceFragment(
@@ -215,12 +201,14 @@ class MainActivity : BaseActivity(), ActivityMainListener {
                 ApiResponse.Status.LOADING -> {
                     showProgress()
                 }
+
                 ApiResponse.Status.SUCCESS -> {
                     hideProgress()
                     val ud = it.data?.data
                     mLog(ud.toString())
                     mPref.setUserDetail(ud)
                 }
+
                 ApiResponse.Status.ERROR -> {
                     hideProgress()
                     mToast(it.error?.message!!)
@@ -230,5 +218,31 @@ class MainActivity : BaseActivity(), ActivityMainListener {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        isBackPressAgain = false
+    }
+
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount > 0) {
+            supportFragmentManager.popBackStack()
+        } else {
+            if (isBackPressAgain) {
+                finishAffinity()
+                super.onBackPressed()
+            } else {
+                isBackPressAgain = true
+                Toast.makeText(
+                    this@MainActivity,
+                    "Press back again to exit",
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
+                Handler(Looper.getMainLooper()).postDelayed({
+                    isBackPressAgain = false
+                }, 3000)
+            }
+        }
+    }
 
 }

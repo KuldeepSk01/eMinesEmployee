@@ -7,6 +7,7 @@ data class BuyerAddressResponse(
     val address_type: String,
     val area: String,
     val buyer_id: Int,
+    val seller_id: Int,
     val city: String,
     val country: String,
     val country_name: String,

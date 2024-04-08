@@ -182,7 +182,7 @@ class DeliveredOrderDetailActivity : BaseActivity() {
                 tvWeightOne.text = it.pickup_weight
                 tvWeight2.text = it.delivery_weight
                 tvEWayBill.text = it.bill_number
-                tvWeight2.text = it.delivery_weight
+                tvGRN.text = it.grn_number
 
                 ivViewWReceiptDeliveredDetail.apply {
                     if (checkIsImageExtensions(it.weight_receipt)) {

@@ -67,7 +67,7 @@ class BuyersFragment : BaseFragment(), OnCreateBuyerSellerListener {
         mBind.rvBuyer.apply {
             layoutManager =
                 LinearLayoutManager(mContext!!.applicationContext, LinearLayoutManager.VERTICAL, false)
-            adapter = BuyerSellerAdapter(buyerList, mContext!!.applicationContext, this@BuyersFragment)
+            adapter = BuyerSellerAdapter(buyerList, mContext!!.applicationContext, this@BuyersFragment,true)
         }
 
     }
@@ -142,6 +142,7 @@ class BuyersFragment : BaseFragment(), OnCreateBuyerSellerListener {
         val b = Bundle()
         b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL,model)
         launchActivity(BuyerOrderActivity::class.java,Constants.DefaultConstant.BUNDLE_KEY,b)
+
     }
 
     override fun onClickPurchaseOrder(model: BuyersResponse) {

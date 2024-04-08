@@ -12,9 +12,6 @@ import com.emines_employee.screen.verifyme2.VerifyMe2Activity
 import com.emines_employee.util.Constants
 import com.emines_employee.util.getCurrentDate
 import com.emines_employee.util.mLog
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Date
 
 class SplashActivity : BaseActivity() {
     private lateinit var splashBinding: ActivitySplashBinding
@@ -26,24 +23,25 @@ class SplashActivity : BaseActivity() {
     override fun onCreateInit(binding: ViewDataBinding?) {
         splashBinding = binding as ActivitySplashBinding
         mHandler = Handler(Looper.getMainLooper())
-        splashBinding.tvAppVersion.text = String.format("%s %s",getString(R.string.version1_0),"1.0")
+        splashBinding.tvAppVersion.text =
+            String.format("%s %s", getString(R.string.version1_0), "1.0")
 
         mRunnable = Runnable {
-            if (mPref[Constants.PreferenceConstant.IS_LOGIN,0]==1){
+            if (mPref[Constants.PreferenceConstant.IS_LOGIN, 0] == 1) {
 
-              //  launchActivity(VerifyMe2Activity::class.java)
+             //   launchActivity(VerifyMe2Activity::class.java)
 
-                if (mPref[Constants.PreferenceConstant.IS_CURRENT_DATE,""] == getCurrentDate()){
-                    mLog("IS Present true")
-                    launchActivity(MainActivity::class.java)
-                    finish()
-                    mLog("IS Present false")
-                }else{
-                    launchActivity(VerifyMe2Activity::class.java)
-                    finish()
-                }
+                 if (mPref[Constants.PreferenceConstant.IS_CURRENT_DATE,""] == getCurrentDate()){
+                     mLog("IS Present true")
+                     launchActivity(MainActivity::class.java)
+                     finish()
+                     mLog("IS Present false")
+                 }else{
+                     launchActivity(VerifyMe2Activity::class.java)
+                     finish()
+                 }
 
-            }else{
+            } else {
                 launchActivity(OnBoardingActivity::class.java)
                 finish()
             }

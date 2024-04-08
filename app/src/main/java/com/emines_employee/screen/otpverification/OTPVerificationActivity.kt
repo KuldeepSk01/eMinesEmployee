@@ -17,6 +17,7 @@ import com.emines_employee.databinding.ActivityOtpverificationBinding
 import com.emines_employee.model.response.LoginOtpResponse
 import com.emines_employee.model.response.UserResponse
 import com.emines_employee.network.ApiResponse
+import com.emines_employee.screen.login.LoginActivity
 import com.emines_employee.screen.login.LoginViewModel
 import com.emines_employee.screen.verifyme.VerifyMeActivity
 import com.emines_employee.util.Constants
@@ -52,10 +53,10 @@ class OTPVerificationActivity : BaseActivity() {
             }
 
             tvVerifyOTPBtn.setOnClickListener {
-                countDownTimer.cancel()
-                countDownTimer.onFinish()
                 val otp = mViewModel.getOtp()
                 if (otp.length==4){
+                    countDownTimer.cancel()
+                    countDownTimer.onFinish()
                     mViewModel.hitOtpVerifyApi(otpDetail?.mobile.toString(),otp!!)
                     mViewModel.verifyOtpResponse.observe(this@OTPVerificationActivity,verifyDataObserver)
                 }else{
@@ -107,7 +108,14 @@ class OTPVerificationActivity : BaseActivity() {
                 ApiResponse.Status.SUCCESS->{
                     hideProgress()
                     setOtpTimer()
-                    oBinding.tvOtpNoText.text = String.format("%s %s",getString(R.string.your_otp_is),it.data?.otp?.toString())
+                    oBinding.apply {
+                        tvOtpNoText.text = String.format("%s %s",getString(R.string.your_otp_is),it.data?.otp?.toString())
+                        etOne.setText("")
+                        etTwo.setText("")
+                        etThree.setText("")
+                        etFour.setText("")
+                    }
+
                 }
                 ApiResponse.Status.ERROR->{
                     hideProgress()
@@ -138,6 +146,8 @@ class OTPVerificationActivity : BaseActivity() {
 
             override fun onFinish() {
                 oBinding.tvOTPTime.text = "00:00"
+                oBinding.tvOtpNoText.text = String.format("%s %s",getString(R.string.your_otp_is),"00:00")
+
                 oBinding.tvResendOtpBtn.apply {
                     isClickable = true
                     setTextColor(ResourcesCompat.getColor(resources, R.color.black, null))

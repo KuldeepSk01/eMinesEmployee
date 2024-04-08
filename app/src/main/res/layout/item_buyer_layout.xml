@@ -52,6 +52,7 @@
                 android:id="@+id/clItemBuyer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:minHeight="@dimen/_50sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/cl2ItemBuyer"
                 app:layout_constraintStart_toEndOf="@+id/cvItemBuyer"
@@ -172,7 +173,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:fontFamily="@font/inter_regular"
-                    android:text="@string/buying_req"
                     android:padding="@dimen/_2sdp"
                     android:textSize="@dimen/_8ssp"
                     android:textColor="@color/white"
@@ -229,11 +229,11 @@
                 android:id="@+id/llcBtnsItemBuyer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_30sdp"
                 android:background="@drawable/gray_btn_drawable"
                 android:padding="@dimen/_5sdp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/clItemBuyer">
+                app:layout_constraintTop_toBottomOf="@+id/cl2ItemBuyer">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/tvUpdateBtnItemBuyer"

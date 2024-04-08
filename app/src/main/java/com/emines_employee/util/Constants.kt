@@ -17,6 +17,12 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 
 object Constants {
+
+    class ImagesUrl{
+        companion object{
+            const val NO_IMAGE_AVAILABLE = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
+        }
+    }
     class RequestCodes{
         companion object
         {
@@ -47,8 +53,17 @@ object Constants {
             const val employeeDashboard="employee_dashboard"
 
 
+
             const val sellerLists="sellerLists"
             const val saveSeller="saveSeller"
+            const val sellerAddresses="sellerAddresses"
+            const val addSellerAddress="addSellerAddress"
+            const val sellerOrderRequest="saveSellerOrderRequest"
+            const val requestSellerOrderList="sellerOrdersLists"
+
+            const val activityLogsList="activity_logs"
+            const val addActivityLogs="addEmpActivity"
+
            /* const val buyerAddresses="buyerAddresses"
             const val addBuyerAddress="addBuyerAddress"*/
 
@@ -81,6 +96,9 @@ object Constants {
             const val ADD_BUYER_DETAIL = "ADD_BUYER_DETAIL"
             const val EMPLOYEE = "EMPLOYEE"
             const val IS_ADD_BUYER_INVALID = "IS_ADD_BUYER_INVALID"
+
+            const val ACTIVITY_LOG_TYPE = "ACTIVITY_LOG_TYPE"
+            const val ACTIVITY_LOG_STATUS = "ACTIVITY_LOG_STATUS"
 
         }
     }

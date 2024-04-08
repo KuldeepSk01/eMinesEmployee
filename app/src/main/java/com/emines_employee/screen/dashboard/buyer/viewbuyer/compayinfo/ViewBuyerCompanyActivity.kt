@@ -8,6 +8,7 @@ import com.emines_employee.databinding.ActivityViewBuyerCompanyBinding
 import com.emines_employee.model.response.BuyersResponse
 import com.emines_employee.screen.dashboard.buyer.createrequest.address.AddressListActivity
 import com.emines_employee.screen.dashboard.buyer.viewbuyer.addressinfo.AddressInfoListActivity
+import com.emines_employee.screen.dashboard.buyer.viewbuyer.kycinfo.ViewBuyerKYCActivity
 import com.emines_employee.util.Constants
 import com.emines_employee.util.serializable
 
@@ -28,10 +29,10 @@ class ViewBuyerCompanyActivity : BaseActivity() {
                 "(${getString(R.string.buyer)})"
             )
             buyerDetail?.let {
-                etCName.setText(it.company_name)
-                etCEmail.setText(it.company_email)
-                etCMobile.setText(it.company_phone)
-                etCWebsite.setText(it.website)
+                etCName.text = it.company_name
+                etCEmail.text = it.company_email
+                etCMobile.text = it.company_phone
+                etCWebsite.text = it.website
             }
 
             bottomButtons.apply {
@@ -47,10 +48,15 @@ class ViewBuyerCompanyActivity : BaseActivity() {
                         val b = Bundle()
                         b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL, buyerDetail)
                         launchActivity(
-                            AddressInfoListActivity::class.java,
+                            ViewBuyerKYCActivity::class.java,
                             Constants.DefaultConstant.BUNDLE_KEY,
                             b
                         )
+                       /* launchActivity(
+                            AddressInfoListActivity::class.java,
+                            Constants.DefaultConstant.BUNDLE_KEY,
+                            b
+                        )*/
                     }
                 }
             }

@@ -6,6 +6,7 @@ import com.emines_employee.koin.appModule
 import com.emines_employee.koin.repositoryModule
 import com.emines_employee.koin.viewModelModule
 import com.emines_employee.network.NetworkConnectionManager
+import com.emines_employee.util.mToast
 import com.emines_employee.util.setContext
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
@@ -43,6 +44,7 @@ class EMinesEmployeeApplication:Application(),KoinComponent {
             return true
         } else if (googleAvailability.isUserResolvableError(result)
         ) {
+            mToast("Google play service has been stopped !" )
             /* val dialog :Dialog = googleAvailability.getErrorDialog(this,result,201,object:DialogInterface.OnCancelListener{
                  override fun onCancel(p0: DialogInterface?) {
                      Toast.makeText(this@StayHookApplication, "User cancel the dialog", Toast.LENGTH_SHORT).show()

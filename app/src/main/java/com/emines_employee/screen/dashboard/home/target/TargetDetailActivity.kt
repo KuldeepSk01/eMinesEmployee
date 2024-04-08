@@ -8,7 +8,7 @@ import com.emines_employee.databinding.ActivityTargetDetailBinding
 import com.emines_employee.model.Order
 import com.emines_employee.model.Targets
 import com.emines_employee.model.response.RequestOrderResponse
-import com.emines_employee.screen.dashboard.orders.OrderViewModel
+import com.emines_employee.screen.dashboard.actvitylog.LOGActivityViewModel
 import com.emines_employee.util.Constants
 import com.emines_employee.util.mLog
 import com.emines_employee.util.serializable
@@ -17,7 +17,6 @@ import com.google.android.material.tabs.TabLayout
 class TargetDetailActivity : BaseActivity(), TabLayout.OnTabSelectedListener,
     OnItemClickOrderListener {
     private lateinit var targetDetailBinding: ActivityTargetDetailBinding
-    val list = OrderViewModel.getOrderList()
 
 
     override val layoutId: Int

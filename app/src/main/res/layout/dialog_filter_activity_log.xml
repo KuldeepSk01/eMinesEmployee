@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/top_rounded_corner"
+            android:paddingBottom="@dimen/_20sdp">
+
+            <TextView
+                android:id="@+id/heading"
+                style="@style/defaultTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/filter_by"
+                android:textColor="@color/blue_color_2"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/close_button"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:src="@drawable/ic_cross"
+                app:layout_constraintBottom_toBottomOf="@+id/heading"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/heading" />
+
+            <!--   <View
+                   android:id="@+id/reply_edittext"
+                   android:layout_width="0dp"
+                   android:layout_height="@dimen/_120sdp"
+                   android:layout_marginStart="@dimen/_10sdp"
+                   android:layout_marginTop="@dimen/_10sdp"
+                   android:layout_marginEnd="@dimen/_10sdp"
+                   android:gravity="top|start"
+                   android:inputType="textMultiLine"
+                   android:lines="8"
+                   android:maxLines="10"
+                   android:minLines="6"
+                   android:enabled="false"
+                   android:padding="@dimen/_6sdp"
+                   android:scrollbars="vertical"
+                   android:textColor="@color/black"
+                   android:textSize="@dimen/_14ssp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/heading" />
+-->
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/heading">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activity_log"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llActivityFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <!-- <RadioGroup
+                         android:id="@+id/rgActivityLog"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content">
+
+                         <RadioButton
+                             android:id="@+id/rbMeeting"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/meeting"/>
+
+                         <RadioButton
+                             android:id="@+id/rbCall"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/meeting"/>
+
+                         <RadioButton
+                             android:id="@+id/rbPersonal"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="@string/meeting"/>
+
+                     </RadioGroup>-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMeetingFilter"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/unselect_btn_drawable"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/meeting"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/defaultTextStyle"
+                        android:id="@+id/tvCallFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/unselect_btn_drawable"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/call"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPersonalTaskFilter"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:background="@drawable/unselect_btn_drawable"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/personal_task"
+                        android:textSize="@dimen/_10ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/status"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llActivityStatusFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/defaultTextStyle"
+                        android:id="@+id/tvScheduledFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/unselect_btn_drawable"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/scheduled"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/defaultTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:id="@+id/tvReScheduledFilter"
+                        android:padding="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="@drawable/unselect_btn_drawable"
+                        android:text="@string/re_scheduled"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/defaultTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:id="@+id/tvCancelledFilter"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/cancelled"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:background="@drawable/unselect_btn_drawable"
+                        android:textSize="@dimen/_10ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <!-- <androidx.appcompat.widget.AppCompatTextView
+                     android:id="@+id/tvCallFilter"
+                     style="@style/TextStyle2"
+                     android:layout_marginTop="@dimen/_10sdp"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:text="@string/call"
+                     android:textSize="@dimen/_12ssp"
+                     android:layout_weight="1"
+                     android:textStyle="bold" />
+
+                 <TextView
+                     android:id="@+id/gallery_textView"
+                     style="@style/TextStyle2"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/image_file"
+                     android:layout_centerHorizontal="true"
+                     android:text="@string/gallery"
+                     android:gravity="center"
+                     android:layout_weight="1"
+                     android:textSize="@dimen/_12ssp"
+                     android:textStyle="bold" />
+                 -->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:id="@+id/tvFilterBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/default_btn_drawable"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Filter"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

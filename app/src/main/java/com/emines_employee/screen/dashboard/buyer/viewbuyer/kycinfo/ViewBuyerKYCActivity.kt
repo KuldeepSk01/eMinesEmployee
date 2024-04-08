@@ -22,7 +22,6 @@ class ViewBuyerKYCActivity : BaseActivity() {
     private lateinit var mBind: ActivityViewBuyerKYCBinding
 
     override val layoutId = R.layout.activity_view_buyer_k_y_c
-
     override fun onCreateInit(binding: ViewDataBinding?) {
         mBind = binding as ActivityViewBuyerKYCBinding
         val buyerDetail = intent.getBundleExtra(Constants.DefaultConstant.BUNDLE_KEY)
@@ -35,18 +34,25 @@ class ViewBuyerKYCActivity : BaseActivity() {
             toolbarBBA.tvToolBarTitle2.text =
                 String.format("%s %s", getString(R.string.kyc), "(${getString(R.string.buyer)})")
             buyerDetail?.let {
-                etPanNo.setText(it.pan_no)
-                etAadhaarNo.setText(it.aadhar_no)
-                etGSTNo.setText(it.gst_no)
+                etPanNo.text = it.pan_no
+                etAadhaarNo.text = it.aadhar_no
+                etGSTNo.text = it.gst_no
 
                 etUploadPan.apply {
-                    if (checkIsImageExtensions(it.pan_file)) {
-                        Glide.with(this@ViewBuyerKYCActivity).load(it.pan_file).into(this)
-                    } else {
+                    if (it.pan_file.isNullOrEmpty()) {
                         Glide.with(this@ViewBuyerKYCActivity)
-                            .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
-                            .into(this)
+                            .load(Constants.ImagesUrl.NO_IMAGE_AVAILABLE).into(this)
+                    } else {
+                        if (checkIsImageExtensions(it.pan_file)) {
+                            Glide.with(this@ViewBuyerKYCActivity).load(it.pan_file).into(this)
+                        } else {
+                            Glide.with(this@ViewBuyerKYCActivity)
+                                .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
+                                .into(this)
+                        }
                     }
+
+
                     setOnClickListener { click ->
                         if (it.pan_file.isEmpty()) {
                             mToast(context.getString(R.string.file_not_uploaded))
@@ -77,13 +83,19 @@ class ViewBuyerKYCActivity : BaseActivity() {
 
                 }
                 etUploadAadhaar.apply {
-                    if (checkIsImageExtensions(it.aadhar_file)) {
-                        Glide.with(this@ViewBuyerKYCActivity).load(it.aadhar_file).into(this)
-                    } else {
+                    if (it.pan_file.isNullOrEmpty()) {
                         Glide.with(this@ViewBuyerKYCActivity)
-                            .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
-                            .into(this)
+                            .load(Constants.ImagesUrl.NO_IMAGE_AVAILABLE).into(this)
+                    } else {
+                        if (checkIsImageExtensions(it.aadhar_file)) {
+                            Glide.with(this@ViewBuyerKYCActivity).load(it.aadhar_file).into(this)
+                        } else {
+                            Glide.with(this@ViewBuyerKYCActivity)
+                                .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
+                                .into(this)
+                        }
                     }
+
                     setOnClickListener { click ->
                         if (it.aadhar_file.isEmpty()) {
                             mToast(context.getString(R.string.file_not_uploaded))
@@ -114,13 +126,19 @@ class ViewBuyerKYCActivity : BaseActivity() {
 
                 }
                 etUploadGST.apply {
-                    if (checkIsImageExtensions(it.gst_file)) {
-                        Glide.with(this@ViewBuyerKYCActivity).load(it.gst_file).into(this)
-                    } else {
+                    if (it.pan_file.isNullOrEmpty()) {
                         Glide.with(this@ViewBuyerKYCActivity)
-                            .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
-                            .into(this)
+                            .load(Constants.ImagesUrl.NO_IMAGE_AVAILABLE).into(this)
+                    } else {
+                        if (checkIsImageExtensions(it.gst_file)) {
+                            Glide.with(this@ViewBuyerKYCActivity).load(it.gst_file).into(this)
+                        } else {
+                            Glide.with(this@ViewBuyerKYCActivity)
+                                .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
+                                .into(this)
+                        }
                     }
+
                     setOnClickListener { click ->
                         if (it.gst_file.isEmpty()) {
                             mToast(context.getString(R.string.file_not_uploaded))

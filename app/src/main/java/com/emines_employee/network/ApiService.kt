@@ -4,11 +4,16 @@ import com.emines_employee.base.BaseResponse
 import com.emines_employee.base.BaseResponse1
 import com.emines_employee.base.CollectionBaseResponse
 import com.emines_employee.base.SuccessMsgResponse
+import com.emines_employee.model.request.ActivityLogRequest
 import com.emines_employee.model.request.ApplyLeaveReq
 import com.emines_employee.model.request.AttendanceSheetReq
 import com.emines_employee.model.request.BuyerAddressRequest
 import com.emines_employee.model.request.GetBuyerOrderRequest
+import com.emines_employee.model.request.GetSellerOrderRequest
 import com.emines_employee.model.request.MarkPresentRepo
+import com.emines_employee.model.request.SellerAddressRequest
+import com.emines_employee.model.response.ActivityLogResponse
+import com.emines_employee.model.response.AddActivityLogResponse
 import com.emines_employee.model.response.Attendance
 import com.emines_employee.model.response.AttendanceResponse
 import com.emines_employee.model.response.BuyerAddressResponse
@@ -19,6 +24,7 @@ import com.emines_employee.model.response.CategoryResponse
 import com.emines_employee.model.response.DashboardResponse
 import com.emines_employee.model.response.LoginOtpResponse
 import com.emines_employee.model.response.RequestOrderResponse
+import com.emines_employee.model.response.SellerOrderRequest
 import com.emines_employee.model.response.TargetsResponse
 import com.emines_employee.model.response.UserResponse
 import com.emines_employee.util.Constants
@@ -64,10 +70,12 @@ interface ApiService {
     fun buyersAddressList(@Query("buyer_id") buyerId: Int): Call<CollectionBaseResponse<BuyerAddressResponse>>
 
     @POST(Constants.UrlsEndPoint.state_list)
-    fun buyersAddressStateList(@Query("buyer_id") buyerId: Int): Call<CollectionBaseResponse<BuyerAddressStateResponse>>
+    fun buyersAddressStateList(): Call<CollectionBaseResponse<BuyerAddressStateResponse>>
+
 
     @POST(Constants.UrlsEndPoint.addBuyerAddress)
     fun addBuyersAddress(@Body req: BuyerAddressRequest): Call<SuccessMsgResponse>
+
 
     @Multipart
     @POST(Constants.UrlsEndPoint.saveBuyer)
@@ -101,9 +109,22 @@ interface ApiService {
     @POST(Constants.UrlsEndPoint.buyerOrderRequest)
     fun buyerOrderRequest(@Body buyerOrderRequest: BuyerOrderRequest): Call<SuccessMsgResponse>
 
-
     @POST(Constants.UrlsEndPoint.requestBuyerOrderList)
     fun getBuyerOrdersList(@Body request: GetBuyerOrderRequest): Call<CollectionBaseResponse<RequestOrderResponse>>
+
+
+
+    @POST(Constants.UrlsEndPoint.requestSellerOrderList)
+    fun getSellerOrdersList(@Body request: GetSellerOrderRequest): Call<CollectionBaseResponse<RequestOrderResponse>>
+    @POST(Constants.UrlsEndPoint.addSellerAddress)
+    fun addSellerAddress(@Body req: SellerAddressRequest): Call<SuccessMsgResponse>
+    @POST(Constants.UrlsEndPoint.sellerAddresses)
+    fun sellerAddressList(@Query("seller_id") sellerId: Int): Call<CollectionBaseResponse<BuyerAddressResponse>>
+
+    @POST(Constants.UrlsEndPoint.sellerOrderRequest)
+    fun sellerOrderRequest(@Body buyerOrderRequest: SellerOrderRequest): Call<SuccessMsgResponse>
+
+
 
     @FormUrlEncoded
     @POST(Constants.UrlsEndPoint.employeeDashboard)
@@ -139,6 +160,12 @@ interface ApiService {
     @POST(Constants.UrlsEndPoint.sellerLists)
     fun sellerList(): Call<CollectionBaseResponse<BuyersResponse>>
 
+
+    @POST(Constants.UrlsEndPoint.activityLogsList)
+    fun activityLogsList(@Body req:ActivityLogRequest): Call<CollectionBaseResponse<ActivityLogResponse>>
+
+    @POST(Constants.UrlsEndPoint.addActivityLogs)
+    fun addActivityLogs(@Body req:ActivityLogRequest): Call<AddActivityLogResponse>
 
 
 }

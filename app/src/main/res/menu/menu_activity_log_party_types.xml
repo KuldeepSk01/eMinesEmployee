@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/buyer"
+        android:title="Buyer" />
+    <item
+        android:id="@+id/seller"
+        android:title="@string/seller" />
+    <item
+        android:id="@+id/other"
+        android:title="@string/other" />
+</menu>

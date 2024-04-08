@@ -15,6 +15,7 @@ import com.emines_employee.util.validation.ValidationState
 class BuyersViewModel(private val repo: BuyersRepo) : BaseViewModel() {
     private val buyersListResponse =
         MutableLiveData<ApiResponse<CollectionBaseResponse<BuyersResponse>>>()
+
     private val buyersAddressListResponse =
         MutableLiveData<ApiResponse<CollectionBaseResponse<BuyerAddressResponse>>>()
 
@@ -47,6 +48,7 @@ class BuyersViewModel(private val repo: BuyersRepo) : BaseViewModel() {
     fun getSaveBuyerResponse(): MutableLiveData<ApiResponse<SuccessMsgResponse>> {
         return saveBuyerResponse
     }
+
 
 
     var validationResponseObserver = MutableLiveData<ValidationState>()

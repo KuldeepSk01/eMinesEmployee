@@ -106,11 +106,27 @@
                         android:drawableEnd="@drawable/ic_add"
                         android:gravity="start"
                         android:background="@drawable/default_btn_drawable2"
-
                         android:text="@string/multi_day"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/llcLeaveBtnsAL" />
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etLeaveReason"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Tell me reason...."
+                        style="@style/editTextStyle"
+                        android:lines="5"
+                        android:gravity="top"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMultiDayBtnAL"
+                        />
+
+
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvMultiDate"
@@ -124,7 +140,7 @@
                         android:paddingBottom="@dimen/_100sdp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvMultiDayBtnAL"
+                        app:layout_constraintTop_toBottomOf="@id/etLeaveReason"
                         />
 
 

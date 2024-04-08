@@ -23,8 +23,8 @@ class BuyersAddressViewModel(private val repo: BuyersAddressRepo) : BaseViewMode
         MutableLiveData<ApiResponse<SuccessMsgResponse>>()
 
 
-    fun hitStateListApi(buyerId: Int) {
-        repo.executeStateListApi(buyerId,buyersStateListResponse)
+    fun hitStateListApi() {
+        repo.executeStateListApi(buyersStateListResponse)
     }
 
     fun getStateListResponse(): MutableLiveData<ApiResponse<CollectionBaseResponse<BuyerAddressStateResponse>>> {

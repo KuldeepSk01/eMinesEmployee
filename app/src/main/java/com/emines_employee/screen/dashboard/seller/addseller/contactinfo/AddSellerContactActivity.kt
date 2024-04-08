@@ -199,6 +199,7 @@ class AddSellerContactActivity : BaseActivity() {
                                         full_name = etFullName.text.toString()
                                         email = etDEmail.text.toString()
                                         phone = etDMobile.text.toString()
+
                                         company_name = it.company_name
                                         company_email = it.company_email
                                         company_phone = it.company_phone

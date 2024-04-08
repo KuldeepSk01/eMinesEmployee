@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -12,16 +13,24 @@ import android.webkit.WebChromeClient
 import android.webkit.WebViewClient
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.emines_employee.adapter.PopupItemPickAdapter
 import com.emines_employee.databinding.DailogProgressLayoutBinding
 import com.emines_employee.databinding.DialogDatePickerBinding
 import com.emines_employee.databinding.DialogLoginSuccessBinding
 import com.emines_employee.databinding.DialogOrderConfirmSuccessBinding
+import com.emines_employee.databinding.DialogPopupListBinding
 import com.emines_employee.databinding.DialogSelectFileBinding
+import com.emines_employee.databinding.DialogTimePickerBinding
 import com.emines_employee.databinding.ViewImageLayoutBinding
 import com.emines_employee.databinding.ViewWebviewDialogLayoutBinding
+import com.emines_employee.model.response.BuyersResponse
 import com.emines_employee.util.getDateFormat
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 
 object CustomDialogs {
@@ -104,6 +113,8 @@ object CustomDialogs {
             datePicker.minDate = System.currentTimeMillis() - 1000
             datePicker.setOnDateChangedListener { view, year, monthOfYear, dayOfMonth ->
                 date = getDateFormat(dayOfMonth, monthOfYear, year)
+            }
+            tvOkBtn.setOnClickListener {
                 listener.onPicker(dialog, date)
             }
 
@@ -117,6 +128,47 @@ object CustomDialogs {
         return dialog
     }
 
+    fun showTimePickerDialog(
+        context: Context,
+        listener: DatePickerDialogListener
+    ): Dialog {
+
+        var date = ""
+
+        val dialog = Dialog(context)
+        val dB = DataBindingUtil.inflate<DialogTimePickerBinding>(
+            LayoutInflater.from(context),
+            R.layout.dialog_time_picker,
+            null,
+            false
+        )
+        dialog.window?.setGravity(Gravity.CENTER)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dB.apply {
+            timePicker.setIs24HourView(true)
+            timePicker.setOnTimeChangedListener { view, hourOfDay, minute ->
+              val c=  Calendar.getInstance().apply {
+                    set(Calendar.HOUR_OF_DAY,hourOfDay)
+                    set(Calendar.MINUTE, minute)
+                }
+                val sdf = SimpleDateFormat("HH:mm a",Locale.getDefault())
+                date = sdf.format(c.time)
+               // listener.onPicker(dialog,date)
+            }
+
+            tvOkBtn.setOnClickListener {
+                listener.onPicker(dialog, date)
+            }
+
+        }
+
+        dialog.setCancelable(false)
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.setContentView(dB.root)
+        dialog.create()
+        dialog.show()
+        return dialog
+    }
 
     fun showLoginSuccessDialog(
         context: Context,
@@ -219,11 +271,9 @@ object CustomDialogs {
             false
         )
         bottomSheet.closeButton.setOnClickListener { dialog.dismiss() }
-
         bottomSheet.imageCamera.setOnClickListener {
             listener.onCameraClick(dialog)
         }
-
         bottomSheet.imageFile.setOnClickListener {
             listener.onImageClick(dialog)
         }
@@ -319,6 +369,43 @@ object CustomDialogs {
         dialog.setContentView(dB.root)
         dialog.create()
         return dialog
+    }
+
+
+
+
+
+    interface OnPopupItemPickerListener{
+        fun onItemPick(model:BuyersResponse)
+    }
+    fun popupDialog(context: Context,list:MutableList<BuyersResponse>,listener:OnPopupItemPickerListener,title:String){
+        val alertDialog = Dialog(context)
+        val b = DataBindingUtil.inflate<DialogPopupListBinding>(
+            LayoutInflater.from(context),
+            R.layout.dialog_popup_list,
+            null,
+            false
+        )
+        b.tvAllBuyerSeller.text = title
+        b.rvSelectTime.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = PopupItemPickAdapter(list,
+                context,
+                object : PopupItemPickAdapter.OnScheduledTimePickerListener {
+                    override fun onTimePicker(model: BuyersResponse) {
+                        Log.d("TAG", "onTimePicker: time $model")
+                        //vTimePickerScheduleVisit.text = model.name
+                        listener.onItemPick(model)
+                        alertDialog.dismiss()
+                    }
+                })
+        }
+        alertDialog.setCancelable(false)
+        alertDialog.setCanceledOnTouchOutside(true)
+        alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        alertDialog.setContentView(b.root)
+        alertDialog.create()
+        alertDialog.show()
     }
 
 }

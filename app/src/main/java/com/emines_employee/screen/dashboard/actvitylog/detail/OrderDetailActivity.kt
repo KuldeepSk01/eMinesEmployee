@@ -1,4 +1,4 @@
-package com.emines_employee.screen.dashboard.orders.detail
+package com.emines_employee.screen.dashboard.actvitylog.detail
 
 import androidx.databinding.ViewDataBinding
 import com.emines_employee.R

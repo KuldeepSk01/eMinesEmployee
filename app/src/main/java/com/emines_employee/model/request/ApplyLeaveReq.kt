@@ -13,5 +13,8 @@ data class ApplyLeaveReq(
     @SerializedName("leave_dates")
     var leaveDates:List<String> = mutableListOf(),
     @SerializedName("is_multi_day")
-    var isMultiDay:Int=-1
+    var isMultiDay:Int=-1,
+    @SerializedName("reason")
+    var reason:String?=null,
+
 ):Serializable

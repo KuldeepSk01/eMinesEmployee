@@ -102,12 +102,14 @@ class ApplyLeaveActivity : BaseActivity() {
                 tvSecondBtn.apply {
                     text = getString(R.string.apply_cap)
                     setOnClickListener {
+                        val leaveReason = etLeaveReason.text.toString()
                         val req = ApplyLeaveReq().apply {
                             userId = userDetail?.id!!
                             leaveType = typeOfLeave
                             dayType = typeOfDay
                             leaveDates = leaveDateList
                             isMultiDay = isMultiDayLeave
+                            reason = leaveReason
                         }
                         mViewModel?.hitApplyLeaveApi(req)
                         mViewModel?.applyLeaveResponse?.observe(this@ApplyLeaveActivity,applyLeaveObserver)

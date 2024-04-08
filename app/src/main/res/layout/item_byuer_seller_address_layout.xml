@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/otp_bg_drawable"
+        android:padding="@dimen/_5sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rlSA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/tvEditBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rbItemAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:checked="false"
+                android:clickable="false"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvItemAddressTitle"
+                            style="@style/TextStyle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:maxWidth="@dimen/_150sdp"
+                            android:text="@string/galaxy_blue_sapphire_sector_4_text"
+                           />
+            -->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemAddressType"
+                style="@style/defaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/otp_bg_drawable"
+                android:fontFamily="@font/inter_semi_bold"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:paddingStart="0dp"
+                android:text="@string/office"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemAddress1"
+                style="@style/defaultTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:maxWidth="@dimen/_150sdp"
+                android:text="@string/galaxy_blue_sapphire_sector_4_text"
+                app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                app:layout_constraintTop_toBottomOf="@+id/tvItemAddressType" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemCity"
+                style="@style/defaultTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_3068_woodlawn_drive_milwaukee_n414_672_5388_text"
+                app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                app:layout_constraintTop_toBottomOf="@+id/tvItemAddress1"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="City :"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemAddressTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvItemCity"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Greater Noida"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemAddressTitle" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemState"
+                style="@style/defaultTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_3068_woodlawn_drive_milwaukee_n414_672_5388_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                app:layout_constraintTop_toBottomOf="@+id/llcItemCity">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="State :"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemAddressTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvItemState"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Greater Noida"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemAddressTitle" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemCountry"
+                style="@style/defaultTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_3068_woodlawn_drive_milwaukee_n414_672_5388_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                app:layout_constraintTop_toBottomOf="@+id/llcItemState">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Country :"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemAddressTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvItemCountry"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="India"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemAddressTitle" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemPinCode"
+                style="@style/defaultTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/_3068_woodlawn_drive_milwaukee_n414_672_5388_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                app:layout_constraintTop_toBottomOf="@+id/llcItemCountry">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="Pincode :"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemAddressTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvItemPinCode"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="2019221"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rbItemAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/tvItemAddressTitle" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEditBtn"
+            style="@style/defaultBtnStyle"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:fontFamily="@font/inter_semi_bold"
+            android:padding="0dp"
+            android:text="@string/edit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -22,10 +22,9 @@ import retrofit2.Response
 class BuyersAddressRepo : BaseRepository() {
 
     fun executeStateListApi(
-        buyerId: Int,
         responseLiveData: MutableLiveData<ApiResponse<CollectionBaseResponse<BuyerAddressStateResponse>>>
     ) {
-        val call = apiService.buyersAddressStateList(buyerId)
+        val call = apiService.buyersAddressStateList()
         responseLiveData.value = ApiResponse.loading()
         call.enqueue(object : Callback<CollectionBaseResponse<BuyerAddressStateResponse>> {
             override fun onResponse(

@@ -23,6 +23,7 @@ import com.emines_employee.network.ApiResponse
 import com.emines_employee.screen.dashboard.MainActivity
 import com.emines_employee.screen.dashboard.buyer.BuyersViewModel
 import com.emines_employee.screen.dashboard.buyer.createrequest.selectcategory.CategoryViewModel
+import com.emines_employee.screen.dashboard.buyer.viewbuyer.addressinfo.EditAddressActivity
 import com.emines_employee.util.Constants
 import com.emines_employee.util.mLog
 import com.emines_employee.util.mToast
@@ -183,7 +184,9 @@ class AddressListActivity : BaseActivity(), AdapterBuyerAddressListener {
     }
 
     override fun onEditAddress(address: BuyerAddressResponse) {
-
+        val b = Bundle()
+        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL, address)
+        launchActivity(EditAddressActivity::class.java, Constants.DefaultConstant.BUNDLE_KEY, b)
     }
 
 

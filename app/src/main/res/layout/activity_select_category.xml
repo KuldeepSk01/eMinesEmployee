@@ -74,7 +74,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:padding="@dimen/_5sdp"
                         tools:itemCount="1"
                         tools:listitem="@layout/item_sell_category_layout"
 
@@ -297,6 +296,7 @@
                         android:layout_marginEnd="@dimen/_15sdp"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_8ssp"
+                        android:text="0"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/etRatePerKgSC" />
 
@@ -324,6 +324,7 @@
                         android:layout_marginEnd="@dimen/_15sdp"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_8ssp"
+                        android:text="0"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvTotalAmountTxt" />
 

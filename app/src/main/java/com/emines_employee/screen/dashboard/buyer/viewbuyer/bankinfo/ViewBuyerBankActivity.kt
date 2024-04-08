@@ -30,9 +30,9 @@ class ViewBuyerBankActivity : BaseActivity() {
             toolbarBuyer.tvToolBarTitle2.text = String.format("%s %s",getString(R.string.bank_account),"(${getString(R.string.buyer)})")
 
             buyerDetail?.let {
-                etBankName.setText(it.bank_name)
-                etAccountNo.setText(it.account_no)
-                etIFSCCODE.setText(it.ifsc_code)
+                etBankName.text = it.bank_name
+                etAccountNo.text = it.account_no
+                etIFSCCODE.text = it.ifsc_code
             }
             mLog(buyerDetail.toString())
 

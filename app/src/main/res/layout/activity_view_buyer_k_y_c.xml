@@ -108,7 +108,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:src="@drawable/ic_white_address" />
+                                android:src="@drawable/ic_white_info" />
                         </androidx.cardview.widget.CardView>
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -117,7 +117,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="@dimen/_10sdp"
-                            android:text="@string/address"
+                            android:text="@string/company_info"
                             android:textColor="@color/primary_color"
                             app:layout_constraintEnd_toEndOf="@+id/cvAddressBCA"
                             app:layout_constraintStart_toStartOf="@+id/cvAddressBCA"
@@ -193,7 +193,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <androidx.appcompat.widget.AppCompatEditText
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/etPanNo"
                             style="@style/editTextStyle"
                             android:layout_width="match_parent"
@@ -239,7 +239,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/etUploadPan" />
 
-                        <androidx.appcompat.widget.AppCompatEditText
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/etAadhaarNo"
                             style="@style/editTextStyle"
                             android:layout_width="match_parent"
@@ -287,7 +287,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/etUploadAadhaar" />
 
-                        <androidx.appcompat.widget.AppCompatEditText
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/etGSTNo"
                             style="@style/editTextStyle"
                             android:layout_width="match_parent"

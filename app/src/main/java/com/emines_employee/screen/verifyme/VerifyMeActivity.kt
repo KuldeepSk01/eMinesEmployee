@@ -1,5 +1,6 @@
 package com.emines_employee.screen.verifyme
 
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.ViewDataBinding
 import com.bumptech.glide.Glide
 import com.emines_employee.R
@@ -23,9 +24,21 @@ class VerifyMeActivity : BaseActivity() {
         verifyBinding = binding as ActivityVerifyMeBinding
 
         verifyBinding.apply {
+            onBackPressedDispatcher.addCallback(this@VerifyMeActivity,object:OnBackPressedCallback(
+                true
+            ){
+                override fun handleOnBackPressed() {
+                    finishAffinity()
+                }
+            })
+
+
             toolbarVerifyMe.apply {
                 ivToolBarBack.setOnClickListener {
-                    onBackPressedDispatcher.onBackPressed()
+                 /*   launchActivity(LoginActivity::class.java)
+                    finish()*/
+                    finishAffinity()
+                   // onBackPressedDispatcher.onBackPressed()
                 }
                 tvToolBarTitle.text = getString(R.string.verify_text)
             }
@@ -38,12 +51,12 @@ class VerifyMeActivity : BaseActivity() {
 
             tvVerifyProfileConfirmBtn.setOnClickListener {
                 launchActivity(VerifyMe2Activity::class.java)
-                finish()
+                //finish()
             }
             tvVerifyProfileNotMeBtn.setOnClickListener {
                 mPref.clearSharedPref()
                 launchActivity(LoginActivity::class.java)
-                finish()
+               // finish()
             }
         }
 

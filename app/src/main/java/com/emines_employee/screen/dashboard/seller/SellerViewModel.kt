@@ -18,6 +18,7 @@ class SellerViewModel(private val repo: SellerRepo) : BaseViewModel() {
     private val SellersAddressListResponse =
         MutableLiveData<ApiResponse<CollectionBaseResponse<BuyerAddressResponse>>>()
 
+
     private val saveSellerResponse =
         MutableLiveData<ApiResponse<SuccessMsgResponse>>()
 

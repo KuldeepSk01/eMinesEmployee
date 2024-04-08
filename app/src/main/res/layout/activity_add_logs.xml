@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollIndicators="none"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".screen.dashboard.home.activitylog.AddLogsActivity">
+
+            <View
+                android:id="@+id/viewAttendance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@drawable/ic_toolbar_bg_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/rlToolBarBCA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    android:id="@+id/toolbarBCA"
+                    layout="@layout/layout_custom_toolbar" />
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clLogs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rlToolBarBCA"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/top_rounded_corner"
+                android:padding="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTypeLogs"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="Activity Type"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontFamily="@font/inter_semi_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etTypeLogs"
+                    style="@style/editTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/ic_black_down_arrow"
+                    android:hint="Call / Meeting / PC"
+                    android:singleLine="true"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTypeLogs" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPartyLogs"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Party "
+                    android:textSize="@dimen/_10ssp"
+                    app:fontFamily="@font/inter_semi_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etTypeLogs" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etPartyLogs"
+                    style="@style/editTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/ic_black_down_arrow"
+                    android:hint="Select Party"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPartyLogs" />
+
+
+                <LinearLayout
+                    android:id="@+id/llPartyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etPartyLogs">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPartyName"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Party Name"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etPartyName"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/ic_black_down_arrow"
+                        android:hint="Select Party Name"
+                        android:singleLine="true"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPartyName" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llNewPartyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llPartyName">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNewPartyName"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="New Party Name"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etNewPartyName"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="Enter Party Name"
+                        android:singleLine="true" />
+
+                </LinearLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDateLogs"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Date"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontFamily="@font/inter_semi_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llNewPartyName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etDateLogs"
+                    style="@style/editTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/ic_black_down_arrow"
+                    android:hint="Select Date"
+                    android:singleLine="true"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDateLogs" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTimeLogs"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Time"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontFamily="@font/inter_semi_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etDateLogs" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+
+                    android:id="@+id/etTimeLogs"
+                    style="@style/editTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/ic_black_down_arrow"
+                    android:hint="Select Time"
+                    android:singleLine="true"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTimeLogs" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStatusLogs"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Status"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontFamily="@font/inter_semi_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etTimeLogs" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/etStatusLogs"
+                    style="@style/editTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:drawableEnd="@drawable/ic_black_down_arrow"
+                    android:hint="Scheduled / Re-Scheduled /cancelled"
+                    android:singleLine="true"
+                    app:layout_constraintTop_toBottomOf="@+id/tvStatusLogs" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRemarkLogs"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Remark"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontFamily="@font/inter_semi_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etStatusLogs" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etRemarkLogs"
+                    style="@style/editTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:hint="Write your comment...."
+                    android:lines="5"
+                    android:gravity="top"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRemarkLogs" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddLogsBtn"
+                    style="@style/defaultBtnStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:text="@string/add"
+                    app:layout_constraintTop_toBottomOf="@+id/etRemarkLogs" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</layout>

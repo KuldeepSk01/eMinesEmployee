@@ -52,8 +52,11 @@ class SellCategoryAdapter(
             } else {
                 //  tvItemFilterTermCode.visibility= View.GONE
                 tvItemFilterCategory.setTextColor(ResourcesCompat.getColor(context.resources,R.color.default_text_color,null))
-                clFilterIcon.background = null
-            }
+                clFilterIcon.background = ResourcesCompat.getDrawable(
+                    context.resources,
+                    R.drawable.category_unselection_drawable,
+                    null
+                )            }
 
             Glide.with(context).load(category.thumbImage).placeholder(R.drawable.refregerator).into(ivItemFilterCategory)
             tvItemFilterCategory.text = category.categoryname

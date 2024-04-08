@@ -49,6 +49,8 @@ class AddAddressActivity : BaseActivity() {
         mBind.apply {
             mLog("state id $stateId country id $countryId")
 
+            toolbarBBA.tvToolBarTitle2.text = getString(R.string.add_address)
+
             etAInfoType.setOnClickListener {
                 dropDownPopup(
                     this@AddAddressActivity,
@@ -62,7 +64,8 @@ class AddAddressActivity : BaseActivity() {
             }
             etAInfoTypeState.setOnClickListener {
                 if (stateList.isEmpty()) {
-                    buyerVm.hitStateListApi(buyerDetail!!.id)
+                    //buyerVm.hitStateListApi(buyerDetail!!.id)
+                    buyerVm.hitStateListApi()
                     buyerVm.getStateListResponse()
                         .observe(this@AddAddressActivity, stateListObserver)
                 } else {

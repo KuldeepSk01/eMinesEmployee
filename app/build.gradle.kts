@@ -26,7 +26,8 @@ android {
 
     buildTypes {
         /*
-        *key alias: EminesEmployee
+        * key alias: EminesEmployee
+        * file : EminesEmployee.jks
         * password: EminesEmployee
         * */
         release {
@@ -89,6 +90,7 @@ dependencies {
     implementation ("com.karumi:dexter:6.2.3")
     //google map library
     implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
 
 
 //for auto update application version when versioncode is upgraded

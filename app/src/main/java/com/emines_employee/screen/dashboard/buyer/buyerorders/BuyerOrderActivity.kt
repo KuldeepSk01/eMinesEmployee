@@ -1,7 +1,6 @@
 package com.emines_employee.screen.dashboard.buyer.buyerorders
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
@@ -13,7 +12,6 @@ import com.emines_employee.adapter.listener.OnClickBuyerOrderListener
 import com.emines_employee.base.BaseActivity
 import com.emines_employee.base.CollectionBaseResponse
 import com.emines_employee.databinding.ActivityBuyerOrderBinding
-import com.emines_employee.model.Order
 import com.emines_employee.model.request.GetBuyerOrderRequest
 import com.emines_employee.model.response.BuyersResponse
 import com.emines_employee.model.response.RequestOrderResponse
@@ -21,7 +19,7 @@ import com.emines_employee.network.ApiResponse
 import com.emines_employee.screen.dashboard.buyer.buyerorders.vieworders.BuyingReqDetailActivity
 import com.emines_employee.screen.dashboard.buyer.buyerorders.vieworders.DeliveredOrderDetailActivity
 import com.emines_employee.screen.dashboard.buyer.buyerorders.vieworders.InProcessDetailActivity
-import com.emines_employee.screen.dashboard.orders.OrderViewModel
+import com.emines_employee.screen.dashboard.actvitylog.LOGActivityViewModel
 import com.emines_employee.util.Constants
 import com.emines_employee.util.mLog
 import com.emines_employee.util.serializable
@@ -33,7 +31,6 @@ class BuyerOrderActivity : BaseActivity(),
 
     private lateinit var mBind: ActivityBuyerOrderBinding
     private val mViewModel: BuyerOrderViewModel by inject()
-    val list = OrderViewModel.getOrderList()
 
     /* val listPurchase = OrderViewModel.getOrderPurchaseList()
      val listBuying = OrderViewModel.getOrderBuyingReqList()

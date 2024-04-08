@@ -6,6 +6,7 @@ import com.emines_employee.base.BaseResponse1
 import com.emines_employee.base.BaseViewModel
 import com.emines_employee.model.response.DashboardResponse
 import com.emines_employee.network.ApiResponse
+import com.emines_employee.screen.dashboard.home.activitylog.MyActivityLogActivity
 import com.emines_employee.screen.dashboard.home.attendance.AttendanceSelectDateActivity
 import com.emines_employee.screen.dashboard.home.target.TargetsActivity
 import com.emines_employee.screen.home2.duty.DutyActivity
@@ -27,6 +28,9 @@ class HomeViewModel(private val repo: HomeRepo) : BaseViewModel() {
         mFragment?.launchActivity(AttendanceSelectDateActivity::class.java)
     }
 
+    fun onClickActivityLog() {
+        mFragment?.launchActivity(MyActivityLogActivity::class.java)
+    }
     fun onClickTargets() {
         mFragment?.launchActivity(TargetsActivity::class.java)
     }

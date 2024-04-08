@@ -38,6 +38,7 @@ class SelectCategoryActivity : BaseActivity(), CompoundButton.OnCheckedChangeLis
     private lateinit var addBuyerGoodsAdapter: AddBuyerGoodsAdapter
 
     private var categoryList = mutableListOf<CategoryResponse>()
+    private lateinit var categoryAdpater : SellCategoryAdapter
 
 
     override val layoutId: Int
@@ -48,6 +49,10 @@ class SelectCategoryActivity : BaseActivity(), CompoundButton.OnCheckedChangeLis
         selectCatBinding.apply {
             val buyerDetail = intent.getBundleExtra(Constants.DefaultConstant.BUNDLE_KEY)
                 ?.serializable<BuyersResponse>(Constants.DefaultConstant.MODEL_DETAIL)
+
+           categoryAdpater =  SellCategoryAdapter(
+                categoryList, this@SelectCategoryActivity, this@SelectCategoryActivity
+            )
             mViewModel.hitCategoryListApi()
             mViewModel.getCategoryListResponse()
                 .observe(this@SelectCategoryActivity, categoryResponseObserver)
@@ -102,8 +107,8 @@ class SelectCategoryActivity : BaseActivity(), CompoundButton.OnCheckedChangeLis
             }
 
             tvAddBuyerOrderReq.setOnClickListener {
-                if (categoryModel != null) {
 
+                if (categoryModel != null) {
                     if (etChooseUnitSC.text.toString().isEmpty()) {
                         mToast(getString(R.string.please_select_weight_of_category))
                     } else {
@@ -135,9 +140,12 @@ class SelectCategoryActivity : BaseActivity(), CompoundButton.OnCheckedChangeLis
                                     ).toString()
                                 }
                                 buyerReqListSet.add(req)
+
                             } else {
                                 mToast(getString(R.string.you_reached_maximum_limit_4))
                             }
+
+
                             buyerReqList = buyerReqListSet.toMutableList()
                             addBuyerGoodsAdapter =
                                 AddBuyerGoodsAdapter(buyerReqList, this@SelectCategoryActivity)
@@ -147,6 +155,22 @@ class SelectCategoryActivity : BaseActivity(), CompoundButton.OnCheckedChangeLis
                             }
                             addBuyerGoodsAdapter.notifyDataSetChanged()
 
+                            tvTotalAMount.text = String.format(
+                                "%s %s",
+                                getString(R.string.indian_rupee_symbol),
+                                0
+                            )
+                            tvTotalAmountWithGst.text = String.format(
+                                "%s %s",
+                                getString(R.string.indian_rupee_symbol),
+                                0
+                            )
+
+                            etRatePerKgSC.setText("")
+                            etChooseUnitSC.setText("")
+                            categoryModel = null
+                            categoryAdpater.notifyDataSetChanged()
+
                         }
                     }
 
@@ -154,55 +178,57 @@ class SelectCategoryActivity : BaseActivity(), CompoundButton.OnCheckedChangeLis
                     mToast(getString(R.string.please_select_category))
                 }
 
-
             }
 
-
             etRatePerKgSC.doOnTextChanged { text, start, before, count ->
-
-                mLog(" text $text start $start before  $before count $count")
-                if (etChooseUnitSC.text.toString().isEmpty()) {
-                    mToast(getString(R.string.please_select_weight_of_category))
-                    etRatePerKgSC.isClickable = false
-                } else {
-                    etRatePerKgSC.isClickable = true
-
-                    if (text?.isNotEmpty()!!) {
-
-                        val amountWithoutGst = totalAmountWithoutGst(
-                            etChooseUnitSC.text.toString().toInt(),
-                            etRatePerKgSC.text.toString().toInt(),
-                        )
-                        val totalPriceWithGst = totalAmountWithGst(
-                            amountWithoutGst,
-                            categoryModel!!.categoryGst.toInt(),
-                        ).toString()
-
-                        selectCatBinding.tvTotalAMount.text = String.format(
-                            "%s %s",
-                            getString(R.string.indian_rupee_symbol),
-                            amountWithoutGst.toString()
-                        )
-                        selectCatBinding.tvTotalAmountWithGst.text = String.format(
-                            "%s %s",
-                            getString(R.string.indian_rupee_symbol),
-                            totalPriceWithGst.toString()
-                        )
+                if (categoryModel != null) {
+                    mLog(" text $text start $start before  $before count $count")
+                    if (etChooseUnitSC.text.toString().isEmpty()) {
+                        mToast(getString(R.string.please_select_weight_of_category))
+                       // etRatePerKgSC.isClickable = false
                     } else {
-                        val tam = totalAmountWithoutGst(etChooseUnitSC.text.toString().toInt(), 1)
-                        selectCatBinding.tvTotalAMount.text = String.format(
-                            "%s %s",
-                            getString(R.string.indian_rupee_symbol), tam
-
-                        )
-                        selectCatBinding.tvTotalAmountWithGst.text = String.format(
-                            "%s %s", getString(R.string.indian_rupee_symbol), totalAmountWithGst(
-                                tam,
+                        if (!text?.isNullOrEmpty()!!) {
+                            val amountWithoutGst = totalAmountWithoutGst(
+                                etChooseUnitSC.text.toString().toInt(),
+                                etRatePerKgSC.text.toString().toInt(),
+                            )
+                            val totalPriceWithGst = totalAmountWithGst(
+                                amountWithoutGst,
                                 categoryModel!!.categoryGst.toInt(),
                             ).toString()
-                        )
+
+                            selectCatBinding.tvTotalAMount.text = String.format(
+                                "%s %s",
+                                getString(R.string.indian_rupee_symbol),
+                                amountWithoutGst.toString()
+                            )
+                            selectCatBinding.tvTotalAmountWithGst.text = String.format(
+                                "%s %s",
+                                getString(R.string.indian_rupee_symbol),
+                                totalPriceWithGst.toString()
+                            )
+
+                        } else {
+                           /* val tam = totalAmountWithoutGst(etChooseUnitSC.text.toString().toInt(), 1)
+                            selectCatBinding.tvTotalAMount.text = String.format(
+                                "%s %s",
+                                getString(R.string.indian_rupee_symbol), tam
+                            )
+                            selectCatBinding.tvTotalAmountWithGst.text = String.format(
+                                "%s %s", getString(R.string.indian_rupee_symbol), totalAmountWithGst(
+                                    tam,
+                                    categoryModel!!.categoryGst.toInt(),
+                                ).toString()
+                            )*/
+                        }
                     }
+                }else{
+                   // etRatePerKgSC.setText("")
+                    mToast(getString(R.string.please_select_category))
                 }
+
+
+
 
 
             }
@@ -238,12 +264,11 @@ class SelectCategoryActivity : BaseActivity(), CompoundButton.OnCheckedChangeLis
     override fun onCategoryClick(category: CategoryResponse) {
         categoryModel = category
         selectCatBinding.apply {
-            /*etRatePerKgSC.setText("")
-            etTotalPicsSC.setText("")*/
+            //etRatePerKgSC.setText("")
+            //etChooseUnitSC.setText("")
             tvCategoryTermsCode.apply {
                 visibility = View.VISIBLE
                 text = String.format("%s : %s", getString(R.string.terms_code), category.termsCode)
-
             }
         }
 
@@ -274,9 +299,10 @@ class SelectCategoryActivity : BaseActivity(), CompoundButton.OnCheckedChangeLis
         addBuyerGoodsAdapter = AddBuyerGoodsAdapter(buyerReqList, this@SelectCategoryActivity)
         selectCatBinding.rvSellCategory.apply {
             layoutManager = GridLayoutManager(this@SelectCategoryActivity, 4)
-            adapter = SellCategoryAdapter(
+            categoryAdpater = SellCategoryAdapter(
                 categoryList, this@SelectCategoryActivity, this@SelectCategoryActivity
             )
+            adapter = categoryAdpater
         }
 
     }

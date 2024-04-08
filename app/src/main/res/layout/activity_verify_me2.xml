@@ -40,6 +40,23 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:visibility="invisible"
+                    app:layout_constraintTop_toBottomOf="@+id/rlToolbarVerifyMe2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp">
+                    <fragment
+                        android:id="@+id/mapFragment"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
                     android:id="@+id/rlVerifyProfileImg"
                     android:layout_width="@dimen/_200sdp"
                     android:layout_height="@dimen/_200sdp"

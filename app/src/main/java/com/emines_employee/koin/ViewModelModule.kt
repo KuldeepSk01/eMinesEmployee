@@ -2,6 +2,7 @@ package com.emines_employee.koin
 
 import com.emines_employee.base.BaseViewModel
 import com.emines_employee.screen.dashboard.MainViewModel
+import com.emines_employee.screen.dashboard.actvitylog.LOGActivityViewModel
 import com.emines_employee.screen.dashboard.buyer.BuyersViewModel
 import com.emines_employee.screen.dashboard.buyer.buyerorders.BuyerOrderViewModel
 import com.emines_employee.screen.dashboard.buyer.viewbuyer.addressinfo.BuyersAddressViewModel
@@ -10,6 +11,9 @@ import com.emines_employee.screen.dashboard.home.attendance.AttendanceViewModel
 import com.emines_employee.screen.dashboard.buyer.createrequest.selectcategory.CategoryViewModel
 import com.emines_employee.screen.dashboard.home.target.TargetsViewModel
 import com.emines_employee.screen.dashboard.seller.SellerViewModel
+import com.emines_employee.screen.dashboard.seller.createorderrequest.selectcategory.SellerCategoryViewModel
+import com.emines_employee.screen.dashboard.seller.sellerorder.SellerOrderViewModel
+import com.emines_employee.screen.dashboard.seller.viewseller.address.SellerAddressViewModel
 import com.emines_employee.screen.login.LoginViewModel
 import com.emines_employee.screen.onboarding.OnBoardViewModel
 import com.emines_employee.screen.otpverification.OTPVerifyViewModel
@@ -35,6 +39,11 @@ val viewModelModule = module {
     single { BuyersViewModel(get()) }
     single { SellerViewModel(get()) }
     single { BuyersAddressViewModel(get()) }
+    single { SellerAddressViewModel(get()) }
     single { CategoryViewModel(get()) }
+    single { SellerCategoryViewModel(get()) }
     single { BuyerOrderViewModel(get()) }
+    single { SellerOrderViewModel(get()) }
+
+    single { LOGActivityViewModel(get()) }
 }
