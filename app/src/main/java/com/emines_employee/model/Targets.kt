@@ -3,10 +3,14 @@ package com.emines_employee.model
 import java.io.Serializable
 
 data class Targets(
-    var id:Long?=-1,
-    var quarterPercentage:Int?=null,
-    var quarterTarget:String?=null,
-    var quarterAchievedTarget:Int?=null,
-    var quarterDate:String?=null,
-    var quarterMonths:String?=null,
+    val order_achived: String,
+    val order_achived_percentage: String,
+    val order_target: String,
+    val quarter_months: String,
+    val volume_achived: String,
+    val volume_achived_percentage: String,
+    val volume_target: String,
+    val weight_achived: String,
+    val weight_achived_percentage: String,
+    val weight_target: String
 ):Serializable

@@ -19,9 +19,10 @@
             android:fillViewport="true"
             android:scrollIndicators="none"
             android:scrollbars="none"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -266,6 +267,7 @@
                                 android:text="24 jan 2014"
                                 android:textColor="@color/black" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
+
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:id="@+id/llcOrderDetail7"
                             android:layout_width="wrap_content"
@@ -296,6 +298,7 @@
                                 android:text="Active"
                                 android:textColor="@color/black" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
+
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:id="@+id/llcOrderDetail8"
                             android:layout_width="wrap_content"
@@ -326,9 +329,6 @@
                                 android:text="19"
                                 android:textColor="@color/black" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-
 
 
                         <View
@@ -377,176 +377,176 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.cardview.widget.CardView>
-<!--
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cvOrderDetail1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_15sdp"
-                    app:cardCornerRadius="@dimen/_10sdp"
-                    app:cardElevation="@dimen/_5sdp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cvOrderDetail">
+                <!--
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/cvOrderDetail1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/_15sdp"
+                                    app:cardCornerRadius="@dimen/_10sdp"
+                                    app:cardElevation="@dimen/_5sdp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/cvOrderDetail">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:padding="@dimen/_10sdp">
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/white"
+                                        android:padding="@dimen/_10sdp">
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvSellerPickupText"
-                            style="@style/defaultTextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_medium"
-                            android:text="@string/seller_pickup_address_text"
-                            android:textColor="@color/order_pending_color"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvSellerPickupText"
+                                            style="@style/defaultTextStyle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/inter_medium"
+                                            android:text="@string/seller_pickup_address_text"
+                                            android:textColor="@color/order_pending_color"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvWebkypeTextOrderDetail"
-                            style="@style/defaultTextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_medium"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:text="@string/webkype_info_services_pvt_ltd_text"
-                            android:textColor="@color/black"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvSellerPickupText"
-                            />
-
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvLocationTextOrderDetail"
-                            style="@style/defaultTextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_medium"
-                            android:text="@string/ts_1014_bsi_business_park_sector_6_noida_up_201301_text"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvWebkypeTextOrderDetail"
-                            />
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvSellerTimeTextOD"
-                            style="@style/defaultTextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/_06_apr_2023_10_40_am_text"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvLocationTextOrderDetail"
-                            />
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvWebkypeTextOrderDetail"
+                                            style="@style/defaultTextStyle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/inter_medium"
+                                            android:layout_marginTop="@dimen/_5sdp"
+                                            android:text="@string/webkype_info_services_pvt_ltd_text"
+                                            android:textColor="@color/black"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvSellerPickupText"
+                                            />
 
 
-                        <View
-                            android:id="@+id/vLineOrderDetail"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_1sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:background="@color/box_color_2"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvSellerTimeTextOD" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvBuyerDeliveryOD"
-                            style="@style/defaultTextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_medium"
-                            android:text="@string/buyer_delivery_address_text"
-                            android:textColor="@color/order_pending_color"
-                            app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            app:layout_constraintTop_toBottomOf="@+id/vLineOrderDetail"
-                            />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvGenxESolutionOD"
-                            style="@style/defaultTextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_medium"
-                            android:layout_marginTop="@dimen/_5sdp"
-                            android:text="@string/genx_esolutions_llc_text"
-                            android:textColor="@color/black"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvBuyerDeliveryOD"
-                            />
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvLocationTextOrderDetail"
+                                            style="@style/defaultTextStyle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/inter_medium"
+                                            android:text="@string/ts_1014_bsi_business_park_sector_6_noida_up_201301_text"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvWebkypeTextOrderDetail"
+                                            />
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvSellerTimeTextOD"
+                                            style="@style/defaultTextStyle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/_06_apr_2023_10_40_am_text"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvLocationTextOrderDetail"
+                                            />
 
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvBuyerLocationOD"
-                            style="@style/defaultTextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_medium"
-                            android:text="@string/ts_1014_bsi_business_park_sector_6_noida_up_201301_text"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvGenxESolutionOD"
-                            />
+                                        <View
+                                            android:id="@+id/vLineOrderDetail"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="@dimen/_1sdp"
+                                            android:layout_marginTop="@dimen/_10sdp"
+                                            android:background="@color/box_color_2"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvSellerTimeTextOD" />
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvBuyerTimeTextOD"
-                            style="@style/defaultTextStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/_06_apr_2023_10_40_am_text"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvBuyerLocationOD"
-                            />
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvBuyerDeliveryOD"
+                                            style="@style/defaultTextStyle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/inter_medium"
+                                            android:text="@string/buyer_delivery_address_text"
+                                            android:textColor="@color/order_pending_color"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            android:layout_marginTop="@dimen/_10sdp"
+                                            app:layout_constraintTop_toBottomOf="@+id/vLineOrderDetail"
+                                            />
 
-
-                        <View
-                            android:id="@+id/vLineOrder3Detail"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_1sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:background="@color/box_color_2"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tvBuyerTimeTextOD" />
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:id="@+id/llcLineOrderDetail2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:layout_marginEnd="@dimen/_20sdp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/vLineOrder3Detail">
-
-                            <androidx.appcompat.widget.AppCompatTextView
-                                style="@style/defaultTextStyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/inter_medium"
-                                android:text="@string/bill_to_text"
-                                android:textColor="@color/primary_color" />
-
-                            <androidx.appcompat.widget.AppCompatTextView
-                                android:id="@+id/tvDateCreateOrderDetail"
-                                style="@style/defaultTextStyle"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_10sdp"
-                                android:fontFamily="@font/inter_medium"
-                                android:text="@string/emines_innovation_pvt_ltd_text"
-                                android:textColor="@color/black" />
-                        </androidx.appcompat.widget.LinearLayoutCompat>
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvGenxESolutionOD"
+                                            style="@style/defaultTextStyle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/inter_medium"
+                                            android:layout_marginTop="@dimen/_5sdp"
+                                            android:text="@string/genx_esolutions_llc_text"
+                                            android:textColor="@color/black"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvBuyerDeliveryOD"
+                                            />
 
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvBuyerLocationOD"
+                                            style="@style/defaultTextStyle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/inter_medium"
+                                            android:text="@string/ts_1014_bsi_business_park_sector_6_noida_up_201301_text"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvGenxESolutionOD"
+                                            />
 
-                </androidx.cardview.widget.CardView>
--->
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvBuyerTimeTextOD"
+                                            style="@style/defaultTextStyle"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/_06_apr_2023_10_40_am_text"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvBuyerLocationOD"
+                                            />
+
+
+                                        <View
+                                            android:id="@+id/vLineOrder3Detail"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="@dimen/_1sdp"
+                                            android:layout_marginTop="@dimen/_10sdp"
+                                            android:background="@color/box_color_2"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/tvBuyerTimeTextOD" />
+                                        <androidx.appcompat.widget.LinearLayoutCompat
+                                            android:id="@+id/llcLineOrderDetail2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/_10sdp"
+                                            android:layout_marginTop="@dimen/_10sdp"
+                                            android:layout_marginEnd="@dimen/_20sdp"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintHorizontal_bias="0"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toBottomOf="@+id/vLineOrder3Detail">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                style="@style/defaultTextStyle"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/inter_medium"
+                                                android:text="@string/bill_to_text"
+                                                android:textColor="@color/primary_color" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/tvDateCreateOrderDetail"
+                                                style="@style/defaultTextStyle"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginStart="@dimen/_10sdp"
+                                                android:fontFamily="@font/inter_medium"
+                                                android:text="@string/emines_innovation_pvt_ltd_text"
+                                                android:textColor="@color/black" />
+                                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </androidx.cardview.widget.CardView>
+                -->
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 

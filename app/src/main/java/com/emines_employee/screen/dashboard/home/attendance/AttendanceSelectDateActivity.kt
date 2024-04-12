@@ -16,6 +16,7 @@ import com.emines_employee.model.request.AttendanceSheetReq
 import com.emines_employee.model.response.Attendance
 import com.emines_employee.model.response.AttendanceResponse
 import com.emines_employee.network.ApiResponse
+import com.emines_employee.util.isConnectionAvailable
 import com.emines_employee.util.mToast
 import org.koin.core.component.inject
 import java.text.SimpleDateFormat
@@ -35,7 +36,11 @@ class AttendanceSelectDateActivity : BaseActivity(), AdepterAttendanceListener {
     override fun onCreateInit(binding: ViewDataBinding?) {
         mBind = binding as ActivityAttendanceSelectDateBinding
         //hitAttendanceApi(mPref.getUserDetail()?.id!!, attendanceType)
-        hitAttendanceApi(mPref.getUserDetail()?.id!!, attendanceType, getCurrentMonth())
+        if (isConnectionAvailable()) {
+            hitAttendanceApi(mPref.getUserDetail()?.id!!, attendanceType, getCurrentMonth())
+        } else {
+            mToast(getString(R.string.oops_no_internet_available))
+        }
 
 
         mBind.apply {
@@ -44,6 +49,11 @@ class AttendanceSelectDateActivity : BaseActivity(), AdepterAttendanceListener {
             }
 
             tvAttendanceTodayBtn.setOnClickListener {
+                if (!isConnectionAvailable()){
+                    mToast(getString(R.string.oops_no_internet_available))
+                    return@setOnClickListener
+                }
+
                 reverseOrder = true
                 onSelectFilter(it as AppCompatTextView)
                 /*  rlAttendance.visibility = View.GONE
@@ -54,6 +64,11 @@ class AttendanceSelectDateActivity : BaseActivity(), AdepterAttendanceListener {
             }
 
             tvAttendanceMonthlyBtn.setOnClickListener { view ->
+                if (!isConnectionAvailable()){
+                    mToast(getString(R.string.oops_no_internet_available))
+                    return@setOnClickListener
+                }
+
                 reverseOrder = false
                 attendanceType = getString(R.string.monthly)
                 onSelectFilter(view as AppCompatTextView)
@@ -77,6 +92,10 @@ class AttendanceSelectDateActivity : BaseActivity(), AdepterAttendanceListener {
 
 
             tvAttendanceYearBtn.setOnClickListener {
+                if (!isConnectionAvailable()){
+                    mToast(getString(R.string.oops_no_internet_available))
+                    return@setOnClickListener
+                }
                 onSelectFilter(it as AppCompatTextView)
                 reverseOrder = true
                 attendanceType = getString(R.string.yearly)

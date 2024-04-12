@@ -172,11 +172,13 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvHomeUName"
                         style="@style/TextStyle1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@+id/tvProfileHome2AttendanceBtn"
                         android:layout_marginStart="@dimen/_5sdp"
                         android:textSize="@dimen/_9ssp"
                         android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
                         android:fontFamily="@font/inter_regular"
                         app:layout_constraintStart_toEndOf="@+id/cvProfileHomeImg"
                         app:layout_constraintTop_toTopOf="@+id/cvProfileHomeImg" />
@@ -185,10 +187,11 @@
                         android:id="@+id/tvHomeMobile"
                         style="@style/TextStyle1"
                         android:textSize="@dimen/_9ssp"
-
-                        android:layout_width="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@+id/tvProfileHome2AttendanceBtn"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/inter_regular"
+                        android:layout_marginEnd="@dimen/_10sdp"
                         app:layout_constraintStart_toStartOf="@+id/tvHomeUName"
                         app:layout_constraintTop_toBottomOf="@+id/tvHomeUName" />
 
@@ -196,9 +199,11 @@
                          android:id="@+id/tvHomeEmail"
                          style="@style/TextStyle1"
                          android:textSize="@dimen/_9ssp"
-                         android:layout_width="wrap_content"
+                         android:layout_width="0dp"
+                         app:layout_constraintEnd_toStartOf="@+id/tvProfileHome2AttendanceBtn"
                          android:layout_height="wrap_content"
                          android:fontFamily="@font/inter_regular"
+                         android:layout_marginEnd="@dimen/_10sdp"
                          app:layout_constraintStart_toStartOf="@+id/tvHomeUName"
                          app:layout_constraintTop_toBottomOf="@+id/tvHomeMobile" />
 

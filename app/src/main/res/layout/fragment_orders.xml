@@ -15,20 +15,21 @@
         android:scrollIndicators="none"
         android:scrollbars="none">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
             tools:context=".screen.dashboard.actvitylog.LOGActivityFragment">
 
-            <!--   <View
-                   android:id="@+id/viewAttendance"
-                   android:layout_width="match_parent"
-                   android:layout_height="@dimen/_150sdp"
-                   android:background="@drawable/ic_toolbar_bg_1"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintTop_toTopOf="parent" />-->
+            <View
+                android:id="@+id/viewAttendance"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@drawable/ic_toolbar_bg_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <RelativeLayout
                 android:id="@+id/rlToolBarActivityLog"
@@ -53,7 +54,7 @@
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:fontFamily="@font/inter_regular"
                 android:text="@string/manage_activity_amp_log"
-                android:textColor="@color/primary_color"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/tvAddActivityLogBtn"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rlToolBarActivityLog"
@@ -75,21 +76,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/rlToolBarActivityLog" />
 
 
-            <!-- <androidx.appcompat.widget.AppCompatImageView
-                 android:id="@+id/ivFilterActivityLog"
-                 style="@style/TextStyle1"
-                 android:layout_width="@dimen/_30sdp"
-                 android:layout_height="@dimen/_30sdp"
-                 android:layout_marginStart="@dimen/_15sdp"
-                 android:padding="@dimen/_5sdp"
-                 android:layout_marginEnd="@dimen/_15sdp"
-                 android:src="@drawable/ic_filter"
-                 android:layout_marginTop="@dimen/_5sdp"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 app:layout_constraintTop_toBottomOf="@+id/tvAddActivityLogBtn"
+            <!--   <androidx.appcompat.widget.AppCompatImageView
+                   android:id="@+id/ivFilterActivityLog"
+                   style="@style/TextStyle1"
+                   android:layout_width="@dimen/_30sdp"
+                   android:layout_height="@dimen/_30sdp"
+                   android:layout_marginStart="@dimen/_15sdp"
+                   android:padding="@dimen/_5sdp"
+                   android:layout_marginEnd="@dimen/_15sdp"
+                   android:src="@drawable/ic_filter"
+                   android:layout_marginTop="@dimen/_5sdp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/tvAddActivityLogBtn"
 
-                 />-->
-
+                   />-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvActivityLog"
@@ -104,6 +104,27 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvAddActivityLogBtn"
                 tools:listitem="@layout/item_activitylog_layout" />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@+id/rvActivityLog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/tvNextPage"
+                android:visibility="gone"
+                style="@style/defaultBtnStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rvActivityLog"
+                android:layout_centerHorizontal="true"
+                android:text="@string/next_page"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:textSize="@dimen/_12ssp"
+                />
+
+
+
+
 
             <RelativeLayout
                 android:id="@+id/rlNoDataAvailable"
@@ -136,8 +157,6 @@
                     android:textStyle="bold" />
 
             </RelativeLayout>
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

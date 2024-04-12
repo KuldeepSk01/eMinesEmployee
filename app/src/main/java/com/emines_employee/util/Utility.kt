@@ -10,6 +10,7 @@ import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.Bitmap
 import android.location.LocationManager
+import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -51,6 +52,8 @@ import java.util.Locale
 
 private var isConnect = false
 private var isGpEnable = false
+
+
 var IsValidBuyerSellerField = false
 private lateinit var context: Context
 
@@ -63,12 +66,12 @@ fun setLocationPermission(isEnableLocationEnable: Boolean) {
 
 fun isGpsProvider(context: Context): Boolean {
     val manager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager?
-      if (!manager?.isProviderEnabled(LocationManager.GPS_PROVIDER)!!) {
-          return  false
-         // buildAlertMessageNoGps(context);
-      }else{
-          return true
-      }
+    if (!manager?.isProviderEnabled(LocationManager.GPS_PROVIDER)!!) {
+        return false
+        // buildAlertMessageNoGps(context);
+    } else {
+        return true
+    }
 }
 
 fun buildAlertMessageNoGps(context: Context) {
@@ -93,6 +96,18 @@ fun setConnection(isAvailable: Boolean) {
     isConnect = isAvailable
 }
 
+
+fun isNetworkAvailable(context: Context): Boolean {
+    val connectivityManager =
+        context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val activeNetworkInfo = connectivityManager.activeNetworkInfo
+    return if (activeNetworkInfo != null && activeNetworkInfo.isConnected) {
+        true
+    } else {
+        Toast.makeText(context, context.getString(R.string.oops_no_internet_available),Toast.LENGTH_LONG).show()
+        false
+    }
+}
 fun mToast(msg: String) {
     Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
 }
@@ -338,7 +353,8 @@ fun showSettingsDialog(activity: Activity) {
 
 // navigating user to app settings
 private fun openSettings(activity: Activity) {
-    val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS) //this is open location setting
+    val intent =
+        Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS) //this is open location setting
     intent.data = Uri.parse("package:" + activity.packageName)
     activity.startActivityForResult(intent, 101)
 }

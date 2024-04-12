@@ -19,7 +19,9 @@ class LOGActivityViewModel(val repo: LOGActivityRepo) : BaseViewModel() {
     fun hitActivityLogListApi(req: ActivityLogRequest) {
         repo.executeActivityLogListApi(req,activityLogsListResponse)
     }
-
+    fun hitActivityLogNextPageListApi(empId:Int,nextPageUrl:String) {
+        repo.executeActivityLogNextPageListApi(empId,nextPageUrl,activityLogsListResponse)
+    }
     fun getActivityLogListResponse(): MutableLiveData<ApiResponse<CollectionBaseResponse<ActivityLogResponse>>> {
         return activityLogsListResponse
     }

@@ -229,6 +229,7 @@
                      android:textStyle="bold" />
                  -->
 
+
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/defaultTextStyle"
                     android:id="@+id/tvFilterBtn"
@@ -242,6 +243,20 @@
                     android:text="Filter"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_12ssp" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:id="@+id/tvClearBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/default_btn_drawable4"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Clear"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

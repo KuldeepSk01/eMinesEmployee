@@ -39,7 +39,9 @@ object Constants {
             const val addEmployeeLeave="add_employee_leave"
             const val attendanceSheet="attendance_sheet"
             const val employeeProfile="employee_profile"
+
             const val employeeTarget="employee_target"
+            const val employeeTargetDetail="employee_target_monthly"
 
             const val buyerLists="buyerLists"
             const val state_list="state_list"

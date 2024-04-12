@@ -1,20 +1,12 @@
 package com.emines_employee.screen.dashboard.home.activitylog
 
-import android.app.Dialog
-import android.view.LayoutInflater
-import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.emines_employee.R
-import com.emines_employee.adapter.MyActivityLogAdapter
-import com.emines_employee.adapter.listener.AdapterMyActivityLogListener
 import com.emines_employee.base.BaseActivity
 import com.emines_employee.databinding.ActivityMyLogBinding
-import com.emines_employee.databinding.DialogEditActivitylogsBinding
 import com.emines_employee.model.MyActivityLogsModel
-import com.emines_employee.util.OnDropDownListener
-import com.emines_employee.util.dropDownPopup
-import com.emines_employee.util.mToast
+import com.emines_employee.screen.dashboard.actvitylog.detail.AddLogsActivity
 
 class MyActivityLogActivity : BaseActivity() {
     private lateinit var b: ActivityMyLogBinding

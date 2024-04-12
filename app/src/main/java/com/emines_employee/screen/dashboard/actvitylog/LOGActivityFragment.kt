@@ -25,10 +25,11 @@ import com.emines_employee.model.request.ActivityLogRequest
 import com.emines_employee.model.response.ActivityLogResponse
 import com.emines_employee.model.response.AddActivityLogResponse
 import com.emines_employee.network.ApiResponse
-import com.emines_employee.screen.dashboard.home.activitylog.AddLogsActivity
+import com.emines_employee.screen.dashboard.actvitylog.detail.AddLogsActivity
 import com.emines_employee.util.Constants
 import com.emines_employee.util.OnDropDownListener
 import com.emines_employee.util.dropDownPopup
+import com.emines_employee.util.isConnectionAvailable
 import com.emines_employee.util.mToast
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import org.koin.core.component.inject
@@ -40,6 +41,8 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
     private val mViewModel: LOGActivityViewModel by inject()
     private var status: String? = null
     private var activityType: String? = null
+    private var nextPageUrl = ""
+    private var empID = mPref.getUserDetail()?.id
 
 
     override fun getLayoutId() = R.layout.fragment_orders
@@ -50,16 +53,23 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
 
     override fun onResume() {
         super.onResume()
-        hitLogApi(activityType, status)
+        if (isConnectionAvailable()) {
+            hitLogApi(activityType, status)
+        } else {
+            mToast(getString(R.string.oops_no_internet_available))
+        }
     }
 
     override fun onCreateViewInit(binding: ViewDataBinding, view: View) {
         b = binding as FragmentOrdersBinding
         b.apply {
-            mPref.put(Constants.PreferenceConstant.ACTIVITY_LOG_TYPE, "")
-            mPref.put(Constants.PreferenceConstant.ACTIVITY_LOG_STATUS, "")
+            activityType = null
+            status = null
 
-
+            b.tvNextPage.setOnClickListener {
+                mViewModel.hitActivityLogNextPageListApi(empID!!,nextPageUrl)
+                mViewModel.getActivityLogListResponse().observe(requireActivity(), activityLogDataObserver)
+            }
             toolbarActivityLog.apply {
                 //tvToolBarTitle.setTextColor(getColor(R.color.white))
                 tvToolBarTitle.text = getString(R.string.activity_log)
@@ -68,10 +78,7 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
                 ivToolBarRightIcon.setOnClickListener {
                     showBottomSheet()
                 }
-
             }
-
-
 
             tvAddActivityLogBtn.setOnClickListener {
                 launchActivity(AddLogsActivity::class.java)
@@ -81,7 +88,7 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
 
     private fun hitLogApi(aType: String?, s: String?) {
         val req = ActivityLogRequest().apply {
-            employeeId = mPref.getUserDetail()?.id
+            employeeId = empID
             activityType = aType
             status = s
         }
@@ -107,8 +114,15 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
                         b.rlNoDataAvailable.visibility = View.GONE
                         b.rvActivityLog.visibility = View.VISIBLE
                     }
-                    setLogList(list)
 
+                    nextPageUrl = it.data.nextPage!!
+
+                    if (nextPageUrl.isNullOrEmpty()) {
+                        b.tvNextPage.visibility = View.GONE
+                    } else {
+                        b.tvNextPage.visibility = View.VISIBLE
+                    }
+                    setLogList(list)
                 }
 
                 ApiResponse.Status.ERROR -> {
@@ -141,43 +155,46 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
             false
         )
         bottomSheet.apply {
-            val aType = mPref.get(Constants.PreferenceConstant.ACTIVITY_LOG_TYPE, "")
-            val aStatus = mPref.get(Constants.PreferenceConstant.ACTIVITY_LOG_STATUS, "")
 
-            if (!aType.isNullOrEmpty()) {
-                when (aType) {
+            if (!activityType.isNullOrEmpty()) {
+                when (activityType) {
                     getString(R.string.call) -> {
                         setOnFilterColor1(tvCallFilter, this)
                     }
+
                     getString(R.string.meeting) -> {
                         setOnFilterColor1(tvMeetingFilter, this)
                     }
+
                     getString(R.string.personal_task) -> {
                         setOnFilterColor1(tvPersonalTaskFilter, this)
                     }
                 }
             }
-            if (!aStatus.isNullOrEmpty()) {
-                when (aStatus) {
+            if (!status.isNullOrEmpty()) {
+                when (status) {
                     getString(R.string.scheduled) -> {
                         setOnFilterColor2(tvScheduledFilter, this)
                     }
+
                     getString(R.string.re_scheduled) -> {
                         setOnFilterColor2(tvReScheduledFilter, this)
                     }
+
                     getString(R.string.cancelled) -> {
                         setOnFilterColor2(tvCancelledFilter, this)
                     }
                 }
             }
 
-
             closeButton.setOnClickListener {
+                dialog.dismiss()
+            }
+            tvClearBtn.setOnClickListener {
                 activityType = null
-                status=null
-                mPref.put(Constants.PreferenceConstant.ACTIVITY_LOG_TYPE, "")
-                mPref.put(Constants.PreferenceConstant.ACTIVITY_LOG_STATUS, "")
-                hitLogApi(activityType,status)
+                status = null
+
+                hitLogApi(activityType, status)
                 dialog.dismiss()
             }
 
@@ -209,6 +226,8 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
             }
         }
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.setCancelable(false)
+        dialog.setCanceledOnTouchOutside(false)
         dialog.setContentView(bottomSheet.root)
         dialog.create()
         dialog.show()
@@ -312,7 +331,6 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
         }
 
         status = (tv as AppCompatTextView).text.toString()
-        mPref.put(Constants.PreferenceConstant.ACTIVITY_LOG_STATUS, status!!)
 
     }
 
@@ -333,9 +351,9 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
         )
 
         bind.apply {
-           /* etTypeLogs.text = model.activityType
-            etPartyLogs.text = model.partyType
-            etPartyName.text = model.partyName*/
+            /* etTypeLogs.text = model.activityType
+             etPartyLogs.text = model.partyType
+             etPartyName.text = model.partyName*/
             etDateLogs.text = model.date
             etTimeLogs.text = model.time
             etStatusLogs.text = model.status
@@ -368,46 +386,58 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
                     OnDropDownListener {
                     override fun onDropDownClick(item: String) {
                         etStatusLogs.text = item
-                        if (model.status!=item){
+                        if (model.status != item) {
                             llEditDate.visibility = View.VISIBLE
-                        }else
-                        {
+                        } else {
                             llEditDate.visibility = View.GONE
                         }
                     }
                 }).show()
             }
-
+            closeButton.setOnClickListener {
+                dialog.dismiss()
+            }
             tvSaveLogsBtn.setOnClickListener {
-               // mToast("Update successfully")
+                // mToast("Update successfully")
                 val mStatus = etStatusLogs.text.toString()
                 val mRemark = etRemarkLogs.text.toString()
                 val mDate = etDateLogs.text.toString()
                 val mTime = etTimeLogs.text.toString()
 
-                if(model.status!=mStatus){
+                if (mDate.isNullOrEmpty()) {
+                    mToast(getString(R.string.please_select_date))
+                    return@setOnClickListener
+                }
+
+                if (mTime.isNullOrEmpty()) {
+                    mToast(getString(R.string.please_select_time))
+                    return@setOnClickListener
+                }
+
+                if (model.status != mStatus) {
+                    dialog.dismiss()
+
                     val req = ActivityLogRequest().apply {
                         employeeId = mPref.getUserDetail()?.id
                         partyId = model.id
                         activityType = model.activityType
                         partyType = model.partyType
                         partyName = model.partyName
-                        date = mDate
-                        time =  mTime
-                        status = mStatus
-                        remark = mRemark
+                        date = if (mDate.isNullOrEmpty()) model.date else mDate
+                        time = if (mTime.isNullOrEmpty()) model.time else mTime
+                        status = if (mStatus.isNullOrEmpty()) model.status else mStatus
+                        remark = if (mRemark.isNullOrEmpty()) model.remark else mRemark
                     }
-
                     mViewModel.hitAddActivityLogApi(req)
-                    mViewModel.getAddActivityLogResponse().observe(requireActivity(),addActivityLogDataObserver)
-
-
+                    mViewModel.getAddActivityLogResponse()
+                        .observe(requireActivity(), addActivityLogDataObserver)
+                } else {
+                    mToast("Please change status!!")
                 }
-                dialog.dismiss()
             }
         }
-
-
+        dialog.setCancelable(false)
+        dialog.setCanceledOnTouchOutside(false)
         dialog.setContentView(bind.root)
         dialog.create()
         dialog.show()
@@ -423,7 +453,7 @@ class LOGActivityFragment : BaseFragment(), AdapterMyActivityLogListener {
                 ApiResponse.Status.SUCCESS -> {
                     hideProgress()
                     mToast(it.data!!.message)
-                    hitLogApi(activityType,status)
+                    hitLogApi(activityType, status)
                 }
 
                 ApiResponse.Status.ERROR -> {

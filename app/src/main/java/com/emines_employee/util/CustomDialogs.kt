@@ -145,7 +145,7 @@ object CustomDialogs {
         dialog.window?.setGravity(Gravity.CENTER)
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         dB.apply {
-            timePicker.setIs24HourView(true)
+            //timePicker.setIs24HourView(true)
             timePicker.setOnTimeChangedListener { view, hourOfDay, minute ->
               val c=  Calendar.getInstance().apply {
                     set(Calendar.HOUR_OF_DAY,hourOfDay)
@@ -407,5 +407,7 @@ object CustomDialogs {
         alertDialog.create()
         alertDialog.show()
     }
+
+
 
 }

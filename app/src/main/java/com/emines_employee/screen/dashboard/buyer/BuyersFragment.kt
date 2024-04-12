@@ -23,6 +23,7 @@ import com.emines_employee.screen.dashboard.buyer.createrequest.selectcategory.S
 import com.emines_employee.util.Constants
 import com.emines_employee.util.IsValidBuyerSellerField
 import com.emines_employee.util.getCalling
+import com.emines_employee.util.isConnectionAvailable
 import com.emines_employee.util.mLog
 import com.emines_employee.util.mToast
 import org.koin.core.component.inject
@@ -56,10 +57,12 @@ class BuyersFragment : BaseFragment(), OnCreateBuyerSellerListener {
                     AddBuyerContactActivity::class.java
                 )
             }
-
-            mViewModel.hitBuyerListApi()
-            mViewModel.getBuyersListResponse().observe(requireActivity(), buyerListResponseObserver)
-
+            if (isConnectionAvailable()) {
+                mViewModel.hitBuyerListApi()
+                mViewModel.getBuyersListResponse().observe(requireActivity(), buyerListResponseObserver)
+            } else {
+                mToast(getString(R.string.oops_no_internet_available))
+            }
         }
     }
 

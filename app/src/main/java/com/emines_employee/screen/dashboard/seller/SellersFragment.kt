@@ -17,14 +17,13 @@ import com.emines_employee.databinding.FragmentSellerBinding
 import com.emines_employee.model.request.AddSellerRequest
 import com.emines_employee.model.response.BuyersResponse
 import com.emines_employee.network.ApiResponse
-import com.emines_employee.screen.dashboard.buyer.buyerorders.BuyerOrderActivity
-import com.emines_employee.screen.dashboard.buyer.createrequest.selectcategory.SelectCategoryActivity
 import com.emines_employee.screen.dashboard.seller.addseller.contactinfo.AddSellerContactActivity
 import com.emines_employee.screen.dashboard.seller.createorderrequest.selectcategory.SellerSelectCategoryActivity
 import com.emines_employee.screen.dashboard.seller.sellerorder.SellerOrdersActivity
 import com.emines_employee.screen.dashboard.seller.viewseller.contact.ViewSellerContactActivity
 import com.emines_employee.util.Constants
 import com.emines_employee.util.getCalling
+import com.emines_employee.util.isConnectionAvailable
 import com.emines_employee.util.mLog
 import com.emines_employee.util.mToast
 import org.koin.core.component.inject
@@ -70,9 +69,14 @@ class SellersFragment : BaseFragment(), OnCreateBuyerSellerListener {
                     )
             }
 
-            mViewModel.hitSellerListApi()
-            mViewModel.getSellerListResponse()
-                .observe(requireActivity(), sellerListResponseObserver)
+            if (isConnectionAvailable()) {
+                mViewModel.hitSellerListApi()
+                mViewModel.getSellerListResponse()
+                    .observe(requireActivity(), sellerListResponseObserver)
+            } else {
+                mToast(getString(R.string.oops_no_internet_available))
+            }
+
         }
     }
 
@@ -87,7 +91,7 @@ class SellersFragment : BaseFragment(), OnCreateBuyerSellerListener {
                     hideProgress()
                     buyerList.clear()
                     buyerList = it.data?.data as MutableList<BuyersResponse>
-                    mLog("Buyers  ${buyerList.toString()}")
+                    mLog("Buyers  $buyerList")
                     setSellerList(buyerList)
                     mBind.tvBuyerAndOrder.text =
                         String.format("%s", "Manage Seller (${buyerList.size}) & Orders")
@@ -138,7 +142,11 @@ class SellersFragment : BaseFragment(), OnCreateBuyerSellerListener {
     override fun onCreateClick(model: BuyersResponse) {
         val b = Bundle()
         b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL, model)
-        launchActivity(SellerSelectCategoryActivity::class.java,Constants.DefaultConstant.BUNDLE_KEY, b)
+        launchActivity(
+            SellerSelectCategoryActivity::class.java,
+            Constants.DefaultConstant.BUNDLE_KEY,
+            b
+        )
 
     }
 
@@ -158,27 +166,27 @@ class SellersFragment : BaseFragment(), OnCreateBuyerSellerListener {
     }
 
     override fun onCallClick(model: BuyersResponse) {
-        getCalling(requireContext(),model.phone)
+        getCalling(requireContext(), model.phone)
     }
 
     override fun onClickBuyingRequest(model: BuyersResponse) {
         val b = Bundle()
-        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL,model)
-        launchActivity(SellerOrdersActivity::class.java,Constants.DefaultConstant.BUNDLE_KEY,b)
+        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL, model)
+        launchActivity(SellerOrdersActivity::class.java, Constants.DefaultConstant.BUNDLE_KEY, b)
 
     }
 
     override fun onClickPurchaseOrder(model: BuyersResponse) {
         val b = Bundle()
-        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL,model)
-        launchActivity(SellerOrdersActivity::class.java,Constants.DefaultConstant.BUNDLE_KEY,b)
+        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL, model)
+        launchActivity(SellerOrdersActivity::class.java, Constants.DefaultConstant.BUNDLE_KEY, b)
 
     }
 
     override fun onClickTotalOrder(model: BuyersResponse) {
         val b = Bundle()
-        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL,model)
-        launchActivity(SellerOrdersActivity::class.java,Constants.DefaultConstant.BUNDLE_KEY,b)
+        b.putSerializable(Constants.DefaultConstant.MODEL_DETAIL, model)
+        launchActivity(SellerOrdersActivity::class.java, Constants.DefaultConstant.BUNDLE_KEY, b)
 
     }
 

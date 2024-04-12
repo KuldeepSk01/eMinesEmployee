@@ -33,11 +33,13 @@
         android:theme="@style/Base.Theme.EMinesEmployee"
         tools:targetApi="31">
         <activity
-            android:name=".screen.dashboard.home.activitylog.AddLogsActivity"
-            android:exported="false" />
+            android:name=".screen.dashboard.actvitylog.detail.AddLogsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".screen.dashboard.home.activitylog.MyActivityLogActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".screen.dashboard.buyer.buyerorders.vieworders.BuyingReqDetailActivity"
             android:exported="false"

@@ -30,7 +30,6 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:gravity="center"
-                android:text="@string/q1_2023"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_10ssp" />
 
@@ -55,26 +54,27 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_margin="@dimen/_5sdp"
+            android:visibility="gone"
             android:gravity="center"
             android:text="@string/apr_may_jun"
             android:textSize="@dimen/_10ssp"
             app:layout_constraintTop_toBottomOf="@+id/rlQuestBtn" />
-
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvItemTargetSales"
+            android:id="@+id/tvItemVolumeTargetTXT"
             style="@style/defaultTextStyle"
             android:layout_width="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="@dimen/_10sdp"
             android:gravity="center"
-            android:text="@string/target_value"
+            android:text="Volume Target Value"
             android:textSize="@dimen/_8ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvItemTargetDate" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvItemTargetValue"
+            android:id="@+id/tvItemVolumeTargetValue"
             style="@style/TextStyle1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -85,9 +85,72 @@
             android:text="@string/_20_00_000_rs"
             android:textColor="@color/black"
             android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemVolumeTargetTXT" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemOrderTargetTXT"
+            style="@style/defaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Order Target Value"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemVolumeTargetValue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemOrderTargetValue"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/_20_00_000_rs"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemOrderTargetTXT" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemWeightTargetText"
+            style="@style/defaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Weight Target Value"
+            android:textSize="@dimen/_8ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemOrderTargetValue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemWeightTargetValue"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/_20_00_000_rs"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvItemTargetSales" />
+            app:layout_constraintTop_toBottomOf="@+id/tvItemWeightTargetText"
+
+            />
+
+
+
+
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -98,7 +161,8 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/_10sdp"
             android:gravity="center"
-            android:text="@string/achieved_value"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Volume Target Acvhieve Value"
             android:textSize="@dimen/_8ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvItemTargetDate" />
@@ -112,10 +176,69 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:gravity="center"
             android:text="@string/_20_00_000_rs"
-            android:textColor="@color/black"
+            android:textColor="@color/order_complete_color"
             android:textSize="@dimen/_8ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvItemTargetAchieved" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemOrderTargetAchieved"
+            style="@style/defaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Order Target Achieve Value"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemTargetAchievedValue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemOrderTargetAchievedValue"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:gravity="center"
+            android:textColor="@color/order_complete_color"
+            android:text="@string/_20_00_000_rs"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemOrderTargetAchieved" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemWeightTargetAchieved"
+            style="@style/defaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Weight Target Achieve Value"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemOrderTargetAchievedValue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemWeightTargetAchievedValue"
+            style="@style/TextStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/_20_00_000_rs"
+            android:textColor="@color/order_complete_color"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemWeightTargetAchieved" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

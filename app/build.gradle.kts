@@ -18,8 +18,8 @@ android {
         applicationId = "com.emines_employee"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2   /// previois 1 version name 1.0
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -97,5 +97,11 @@ dependencies {
     implementation("com.google.android.play:app-update:2.1.0")
     implementation("com.google.android.play:app-update-ktx:2.1.0")
 
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
+
+    /*   //swipe layout
+       implementation ("it.xabaras.android:recyclerview-swipedecorator:1.4")
+
+   */
 }

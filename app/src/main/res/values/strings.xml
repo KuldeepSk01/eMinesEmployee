@@ -464,7 +464,7 @@
     <string name="add_address">Add address</string>
     <string name="edit_address">Edit Address</string>
     <string name="manage_activity_amp_log"><![CDATA[Manage Activity & Log]]></string>
-    <string name="activity_log">Activity Log</string>
+    <string name="activity_log">Activity</string>
     <string name="add_activity_log">Add Activity Log</string>
     <string name="call">Call</string>
     <string name="meeting">Meeting</string>
@@ -473,6 +473,10 @@
     <string name="scheduled">Scheduled</string>
     <string name="re_scheduled">Re-scheduled</string>
     <string name="please_select_activity_type">Please select Activity Type !</string>
+    <string name="please_select_time">Please select Time !!</string>
+    <string name="please_select_date">Please select Date !!</string>
+    <string name="next_page">Next Page</string>
+    <string name="oops_no_internet_available">OOPS! No Internet Available!!</string>
     <string-array name="order_id">
         <item>101</item>
         <item>102</item>

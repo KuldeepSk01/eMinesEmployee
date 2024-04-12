@@ -35,12 +35,6 @@ class PopupItemPickAdapter(
     override fun onBindViewHolder(holder: ScheduledTimePickVM, position: Int) {
         val model = list[position]
         holder.b.apply {
-           /* if (position%2==0){
-                rlItemPopup.setBackgroundColor(context.getColor(R.color.box_color_1))
-
-            }else{
-                rlItemPopup.setBackgroundColor(context.getColor(R.color.box_color_2))
-            }*/
             tvItemScheduleTime.text = model.name
             tvItemScheduleTime.setOnClickListener {
                 listener.onTimePicker(model)

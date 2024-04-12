@@ -17,7 +17,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".screen.dashboard.home.activitylog.AddLogsActivity">
+            tools:context=".screen.dashboard.actvitylog.detail.AddLogsActivity">
 
             <View
                 android:id="@+id/viewAttendance"

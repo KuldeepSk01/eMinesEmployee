@@ -21,7 +21,9 @@ import com.emines_employee.screen.dashboard.buyer.buyerorders.vieworders.Deliver
 import com.emines_employee.screen.dashboard.buyer.buyerorders.vieworders.InProcessDetailActivity
 import com.emines_employee.screen.dashboard.actvitylog.LOGActivityViewModel
 import com.emines_employee.util.Constants
+import com.emines_employee.util.isConnectionAvailable
 import com.emines_employee.util.mLog
+import com.emines_employee.util.mToast
 import com.emines_employee.util.serializable
 import com.google.android.material.tabs.TabLayout
 import org.koin.core.component.inject
@@ -49,7 +51,12 @@ class BuyerOrderActivity : BaseActivity(),
         val buyerResponse = intent.getBundleExtra(Constants.DefaultConstant.BUNDLE_KEY)
             ?.serializable<BuyersResponse>(Constants.DefaultConstant.MODEL_DETAIL)
         buyerID = buyerResponse!!.id
-        hitGetOrdersApi(getString(R.string.buying_request_text))
+
+        if (isConnectionAvailable()) {
+            hitGetOrdersApi(getString(R.string.buying_request_text))
+        } else {
+            mToast(getString(R.string.oops_no_internet_available))
+        }
 
         mBind.apply {
             toolBarBuyerOrder.apply {

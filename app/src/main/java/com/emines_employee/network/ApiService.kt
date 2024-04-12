@@ -25,8 +25,9 @@ import com.emines_employee.model.response.DashboardResponse
 import com.emines_employee.model.response.LoginOtpResponse
 import com.emines_employee.model.response.RequestOrderResponse
 import com.emines_employee.model.response.SellerOrderRequest
-import com.emines_employee.model.response.TargetsResponse
 import com.emines_employee.model.response.UserResponse
+import com.emines_employee.model.response.target.MyTargetsResponse
+import com.emines_employee.model.response.target.TargetDetailResponse
 import com.emines_employee.util.Constants
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -39,6 +40,7 @@ import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
 import retrofit2.http.Query
+import retrofit2.http.Url
 
 interface ApiService {
 
@@ -61,7 +63,13 @@ interface ApiService {
     fun employeeProfile(@Query("user_id") userId:Int):Call<BaseResponse<UserResponse>>
 
     @POST(Constants.UrlsEndPoint.employeeTarget)
-    fun employeeTargets(@Query("user_id") userId:Int):Call<BaseResponse<TargetsResponse>>
+    fun employeeTargets(@Query("user_id") userId:Int,@Query("year") year:String):Call<MyTargetsResponse>
+
+
+    @POST(Constants.UrlsEndPoint.employeeTargetDetail)
+    fun employeeTargetDetail(@Query("user_id") userId:Int,@Query("year") year:String,@Query("filter_by_quarter") filterByQuarter:String):Call<CollectionBaseResponse<TargetDetailResponse>>
+
+
 
     @POST(Constants.UrlsEndPoint.buyerLists)
     fun buyersList(): Call<CollectionBaseResponse<BuyersResponse>>
@@ -163,6 +171,9 @@ interface ApiService {
 
     @POST(Constants.UrlsEndPoint.activityLogsList)
     fun activityLogsList(@Body req:ActivityLogRequest): Call<CollectionBaseResponse<ActivityLogResponse>>
+
+    @POST()
+    fun activityLogsNextPage(@Query("employee_id") empId:Int,@Url url:String): Call<CollectionBaseResponse<ActivityLogResponse>>
 
     @POST(Constants.UrlsEndPoint.addActivityLogs)
     fun addActivityLogs(@Body req:ActivityLogRequest): Call<AddActivityLogResponse>

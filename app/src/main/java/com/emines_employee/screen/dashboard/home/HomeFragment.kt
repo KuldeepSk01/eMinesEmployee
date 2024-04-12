@@ -3,19 +3,14 @@ package com.emines_employee.screen.dashboard.home
 import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.emines_employee.R
-import com.emines_employee.adapter.HomeSliderAdapter
 import com.emines_employee.base.BaseFragment
 import com.emines_employee.base.BaseResponse1
 import com.emines_employee.databinding.FragmentHomeBinding
 import com.emines_employee.model.response.DashboardResponse
 import com.emines_employee.network.ApiResponse
-import com.emines_employee.screen.dashboard.MainActivity
-import com.emines_employee.screen.dashboard.buyer.BuyersFragment
-import com.emines_employee.screen.dashboard.seller.SellersFragment
+import com.emines_employee.util.isConnectionAvailable
 import com.emines_employee.util.mToast
 import org.koin.android.ext.android.inject
 
@@ -30,35 +25,46 @@ class HomeFragment : BaseFragment() {
         homeBinding = binding as FragmentHomeBinding
         mViewModel.mFragment = this@HomeFragment
         homeBinding.mViewModel = mViewModel
-        mViewModel.hitDashboardApi(mPref.getUserDetail()?.id!!)
-        mViewModel.getHomeDashboardApiResponse().observe(this@HomeFragment,dashboardDataResponse)
+
+        if (isConnectionAvailable()) {
+            mViewModel.hitDashboardApi(mPref.getUserDetail()?.id!!)
+            mViewModel.getHomeDashboardApiResponse().observe(this@HomeFragment, dashboardDataResponse)
+        } else {
+            mToast(getString(R.string.oops_no_internet_available))
+        }
+
+
+
+
+
 
         homeBinding.apply {
             llcHomeBuyers.setOnClickListener {
                 //
-            // replaceFragment(R.id.flMainContainer,BuyersFragment())
+                // replaceFragment(R.id.flMainContainer,BuyersFragment())
             }
 
             llcHomeSeller.setOnClickListener {
-               // replaceFragment(R.id.flMainContainer,SellersFragment())
+                // replaceFragment(R.id.flMainContainer,SellersFragment())
             }
 
-           /* rvInfoProfileHome.apply {
-                layoutManager =
-                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                adapter = HomeSliderAdapter(getSliderList(), requireContext())
-            }
+            /* rvInfoProfileHome.apply {
+                 layoutManager =
+                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                 adapter = HomeSliderAdapter(getSliderList(), requireContext())
+             }
 
-            rvInfo2ProfileHome.apply {
-                layoutManager =
-                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                adapter = HomeSliderAdapter(getSliderList(), requireContext())
-            }
-*/
+             rvInfo2ProfileHome.apply {
+                 layoutManager =
+                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                 adapter = HomeSliderAdapter(getSliderList(), requireContext())
+             }
+ */
             userDetail?.let {
-                Glide.with(requireContext()).load(it.profilePic).placeholder(R.drawable.profile_img).into(ivProfileHomeImg)
-                tvHomeUName.text = String.format("%s %s",it.name,it.lastName)
-                tvHomeEmail.text  = it.email
+                Glide.with(requireContext()).load(it.profilePic).placeholder(R.drawable.profile_img)
+                    .into(ivProfileHomeImg)
+                tvHomeUName.text = String.format("%s %s", it.name, it.lastName)
+                tvHomeEmail.text = it.email
                 tvHomeMobile.text = it.phone
                 currentAddressHome.text = it.address
             }
@@ -68,12 +74,13 @@ class HomeFragment : BaseFragment() {
 
     }
 
-    private val dashboardDataResponse = Observer<ApiResponse<BaseResponse1<DashboardResponse>>>{
-        when(it.status){
-            ApiResponse.Status.LOADING->{
+    private val dashboardDataResponse = Observer<ApiResponse<BaseResponse1<DashboardResponse>>> {
+        when (it.status) {
+            ApiResponse.Status.LOADING -> {
                 showProgress()
             }
-            ApiResponse.Status.SUCCESS->{
+
+            ApiResponse.Status.SUCCESS -> {
                 hideProgress()
                 homeBinding.apply {
                     val model = it.data?.data
@@ -93,7 +100,8 @@ class HomeFragment : BaseFragment() {
 
                 }
             }
-            ApiResponse.Status.ERROR->{
+
+            ApiResponse.Status.ERROR -> {
                 hideProgress()
                 mToast(it.error?.message.toString())
             }
